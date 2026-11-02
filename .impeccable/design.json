@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-02T18:02:00+04:00",
+  "title": "Design System: HYBRID Electro Mechanical L.L.C",
+  "extensions": {
+    "colorMeta": {
+      "brand-indigo": {
+        "role": "primary",
+        "displayName": "HYBRID Royal Indigo",
+        "canonical": "#4b53a4",
+        "tonalRamp": [
+          "#191c3d",
+          "#262b5c",
+          "#383f85",
+          "#4b53a4",
+          "#6e76bf",
+          "#9ca2d6",
+          "#cbcfe9",
+          "#e6e8f6"
+        ]
+      },
+      "brand-indigo-deep": {
+        "role": "primary",
+        "displayName": "Deep Indigo Press",
+        "canonical": "#383f85",
+        "tonalRamp": [
+          "#141733",
+          "#20254f",
+          "#2c326a",
+          "#383f85",
+          "#5860a6",
+          "#858bc2",
+          "#b8bcdf",
+          "#e2e4f3"
+        ]
+      },
+      "brand-indigo-soft": {
+        "role": "neutral",
+        "displayName": "Indigo Tint Wash",
+        "canonical": "#e6e8f6",
+        "tonalRamp": [
+          "#242847",
+          "#3d4375",
+          "#5d65a3",
+          "#848bc2",
+          "#acb1d9",
+          "#cbd0ea",
+          "#e6e8f6",
+          "#f4f5fb"
+        ]
+      },
+      "whatsapp-green": {
+        "role": "secondary",
+        "displayName": "Direct WhatsApp Emerald",
+        "canonical": "#126b38",
+        "tonalRamp": [
+          "#082e18",
+          "#0e522b",
+          "#126b38",
+          "#1b8a4b",
+          "#34a866",
+          "#68c48f",
+          "#a6dfbe",
+          "#e1f5e9"
+        ]
+      },
+      "ink-black": {
+        "role": "neutral",
+        "displayName": "Deep Obsidian Ink",
+        "canonical": "#0d0f18",
+        "tonalRamp": [
+          "#0d0f18",
+          "#1a1e2e",
+          "#2b3047",
+          "#414866",
+          "#60688a",
+          "#8b92b0",
+          "#bcc1d4",
+          "#eaecf3"
+        ]
+      },
+      "ink-secondary": {
+        "role": "neutral",
+        "displayName": "Slate Charcoal",
+        "canonical": "#383d52",
+        "tonalRamp": [
+          "#141720",
+          "#242838",
+          "#383d52",
+          "#4f5670",
+          "#6d7591",
+          "#949bb3",
+          "#c1c6d6",
+          "#eceef4"
+        ]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Muted Blueprint Slate",
+        "canonical": "#585e74",
+        "tonalRamp": [
+          "#1c1f29",
+          "#2f3342",
+          "#43485c",
+          "#585e74",
+          "#767c94",
+          "#9ca1b5",
+          "#c6c9d6",
+          "#eef0f5"
+        ]
+      },
+      "bg-white": {
+        "role": "neutral",
+        "displayName": "Studio White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#20222b",
+          "#3e4152",
+          "#62677d",
+          "#8b90a6",
+          "#b5b9c9",
+          "#d8dae5",
+          "#f0f1f6",
+          "#ffffff"
+        ]
+      },
+      "bg-soft": {
+        "role": "neutral",
+        "displayName": "Cool Architectural Grey",
+        "canonical": "#f4f5fa",
+        "tonalRamp": [
+          "#1e202b",
+          "#383c4f",
+          "#585e78",
+          "#7e84a1",
+          "#a8adc4",
+          "#ced2e3",
+          "#e6e8f2",
+          "#f4f5fa"
+        ]
+      },
+      "line-subtle": {
+        "role": "neutral",
+        "displayName": "Hairline Divider Grey",
+        "canonical": "#e1e4f0",
+        "tonalRamp": [
+          "#1f2230",
+          "#3a3f57",
+          "#5a6180",
+          "#8087a6",
+          "#a8aec7",
+          "#c8cde0",
+          "#e1e4f0",
+          "#f3f4f9"
+        ]
+      },
+      "error-crimson": {
+        "role": "tertiary",
+        "displayName": "Validation Crimson",
+        "canonical": "#b91c1c",
+        "tonalRamp": [
+          "#450a0a",
+          "#7f1d1d",
+          "#991b1b",
+          "#b91c1c",
+          "#dc2626",
+          "#ef4444",
+          "#fca5a5",
+          "#fee2e2"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display Supergraphic",
+        "purpose": "Full-width lowercase 'hybrid mep' hero banner spanning edge-to-edge across the container."
+      },
+      "headline": {
+        "displayName": "Section Headline",
+        "purpose": "Primary section headings and high-contrast banner titles."
+      },
+      "title": {
+        "displayName": "Bento Card Title",
+        "purpose": "Service division headings and project sector titles."
+      },
+      "body": {
+        "displayName": "Body Copy",
+        "purpose": "Engineering scope descriptions, company narrative, and form controls."
+      },
+      "label": {
+        "displayName": "Technical Scope Label",
+        "purpose": "Uppercase sector pills, MEP discipline keys, and metadata labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "cutout-stage-drop",
+        "value": "drop-shadow(-10px 12px 22px rgba(13, 15, 24, 0.12))",
+        "purpose": "Directional depth shadow cast by transparent-background 3D MEP equipment and technician cutouts."
+      },
+      {
+        "name": "card-hover-lift",
+        "value": "0 20px 40px -24px rgba(13, 15, 24, 0.12)",
+        "purpose": "Subtle elevation applied to #f4f5fa service bento cards on hover."
+      },
+      {
+        "name": "floating-utility",
+        "value": "0 12px 28px rgba(13, 15, 24, 0.22)",
+        "purpose": "Neutral obsidian shadow supporting the sticky WhatsApp conversion pill."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Primary easing for button lifts, 45deg arrow badge rotations, cutout hover scales, and counter animations."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "1080px"
+      },
+      {
+        "name": "mobile",
+        "value": "768px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Pill Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary obsidian pill CTA with nested white circular arrow badge that rotates 45deg on hover.",
+      "html": "<a href=\"#projects\" class=\"ds-btn-primary\"><span>Explore Projects</span><span class=\"ds-btn-circle\" aria-hidden=\"true\"><svg viewBox=\"0 0 16 16\" width=\"12\" height=\"12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 12L12 4M6 4h6v6\"/></svg></span></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 0.65rem; border-radius: 9999px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 0.9375rem; line-height: 1; background-color: var(--ink-black, #0d0f18); color: var(--bg-white, #ffffff); padding: 0.78rem 0.9rem 0.78rem 1.35rem; text-decoration: none; transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.28s ease; } .ds-btn-primary:hover { background-color: var(--brand-indigo, #4b53a4); transform: translateY(-2px); } .ds-btn-primary:focus-visible { outline: 2px solid var(--brand-indigo, #4b53a4); outline-offset: 3px; } .ds-btn-circle { width: 28px; height: 28px; border-radius: 50%; background-color: var(--bg-white, #ffffff); color: var(--ink-black, #0d0f18); display: inline-grid; place-items: center; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover .ds-btn-circle { transform: rotate(45deg); }"
+    },
+    {
+      "name": "Outline Pill Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary studio-white pill button with crisp 1.5px obsidian stroke.",
+      "html": "<a href=\"#services\" class=\"ds-btn-outline\"><span>All Services</span><svg viewBox=\"0 0 16 16\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 12L12 4M6 4h6v6\"/></svg></a>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; gap: 0.65rem; border-radius: 9999px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 0.9375rem; line-height: 1; background-color: var(--bg-white, #ffffff); color: var(--ink-black, #0d0f18); border: 1.5px solid var(--ink-black, #0d0f18); padding: 0.78rem 1.35rem; text-decoration: none; transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.28s ease, border-color 0.28s ease, color 0.28s ease; } .ds-btn-outline:hover { background-color: var(--bg-soft, #f4f5fa); border-color: var(--brand-indigo, #4b53a4); color: var(--brand-indigo, #4b53a4); transform: translateY(-2px); } .ds-btn-outline:focus-visible { outline: 2px solid var(--brand-indigo, #4b53a4); outline-offset: 3px; }"
+    },
+    {
+      "name": "Lifecycle Filter Chip",
+      "kind": "chip",
+      "refersTo": "button-outline",
+      "description": "Interactive phase filter pill for highlighting stages in the Turnkey MEP Execution Lifecycle.",
+      "html": "<div class=\"ds-chip-row\"><button type=\"button\" class=\"ds-chip is-active\">All Phases</button><button type=\"button\" class=\"ds-chip\">Engineering &amp; Submittals</button></div>",
+      "css": ".ds-chip-row { display: inline-flex; gap: 0.5rem; flex-wrap: wrap; } .ds-chip { padding: 0.55rem 1.1rem; border-radius: 9999px; border: 1px solid var(--line-subtle, #e1e4f0); background-color: var(--bg-white, #ffffff); color: var(--ink-secondary, #383d52); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; } .ds-chip:hover { border-color: var(--brand-indigo, #4b53a4); color: var(--brand-indigo, #4b53a4); } .ds-chip.is-active { background-color: var(--ink-black, #0d0f18); border-color: var(--ink-black, #0d0f18); color: var(--bg-white, #ffffff); } .ds-chip:focus-visible { outline: 2px solid var(--brand-indigo, #4b53a4); outline-offset: 2px; }"
+    },
+    {
+      "name": "Inquiry Text Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Architectural form field with 1px subtle border and 3px royal indigo focus ring.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-label\" for=\"ds-name\">Name</label><input id=\"ds-name\" class=\"ds-input\" type=\"text\" placeholder=\"Your full name or company\"></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 0.4rem; font-family: 'Plus Jakarta Sans', sans-serif; } .ds-label { font-size: 0.85rem; font-weight: 600; color: var(--ink-black, #0d0f18); } .ds-input { width: 100%; padding: 0.85rem 1rem; border-radius: 10px; border: 1px solid var(--line-subtle, #e1e4f0); background-color: var(--bg-white, #ffffff); color: var(--ink-black, #0d0f18); font-size: 0.95rem; transition: border-color 0.2s ease, box-shadow 0.2s ease; } .ds-input:focus { outline: none; border-color: var(--brand-indigo, #4b53a4); box-shadow: 0 0 0 3px rgba(75, 83, 164, 0.16); }"
+    },
+    {
+      "name": "Header Navigation Bar",
+      "kind": "nav",
+      "refersTo": "button-primary",
+      "description": "Sticky translucent architectural header pairing brand wordmark, section links, and primary pill CTA.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-brand\">HYBRID</span><div class=\"ds-nav-links\"><a href=\"#about\" class=\"ds-nav-link\">About Us</a><a href=\"#services\" class=\"ds-nav-link\">Services</a><a href=\"#projects\" class=\"ds-nav-link\">Projects</a></div><a href=\"#contact\" class=\"ds-nav-cta\">Contact Us</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 0.9rem 1.5rem; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(12px); border: 1px solid var(--line-subtle, #e1e4f0); border-radius: 16px; font-family: 'Plus Jakarta Sans', sans-serif; } .ds-nav-brand { font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 1.2rem; letter-spacing: 0.02em; color: var(--brand-indigo, #4b53a4); } .ds-nav-links { display: flex; gap: 1.5rem; } .ds-nav-link { font-size: 0.9375rem; font-weight: 500; color: var(--ink-secondary, #383d52); text-decoration: none; transition: color 0.2s ease; } .ds-nav-link:hover { color: var(--brand-indigo, #4b53a4); } .ds-nav-cta { padding: 0.6rem 1.1rem; border-radius: 9999px; background: var(--ink-black, #0d0f18); color: var(--bg-white, #ffffff); font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: background-color 0.2s ease; } .ds-nav-cta:hover { background: var(--brand-indigo, #4b53a4); }"
+    },
+    {
+      "name": "Project Sector Scope Bento Card",
+      "kind": "card",
+      "refersTo": "card-bento",
+      "description": "24px-radius #f4f5fa engineering scope card with sector pill, flat 3-row MEP discipline matrix, and circular corner action button.",
+      "html": "<article class=\"ds-sector-card\"><div class=\"ds-sector-top\"><span class=\"ds-sector-pill\">Residential</span><span class=\"ds-sector-meta\">UAE Sector Scope</span></div><dl class=\"ds-scope-matrix\"><div class=\"ds-scope-row\"><dt>Electrical &amp; ELV</dt><dd>MDB/SMDB Distribution, Lighting &amp; Smart Home Automation</dd></div><div class=\"ds-scope-row\"><dt>HVAC &amp; Mechanical</dt><dd>Chilled Water FCUs, Split Systems &amp; Insulated Ducting</dd></div></dl><div class=\"ds-sector-footer\"><div><h3 class=\"ds-sector-title\">[Project Name — Residential]</h3><p class=\"ds-sector-sub\">Full MEP Design, Supply &amp; Commissioning</p></div><a href=\"#contact\" class=\"ds-corner-btn\" aria-label=\"Inquire\"><svg viewBox=\"0 0 16 16\" width=\"15\" height=\"15\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 12L12 4M6 4h6v6\"/></svg></a></div></article>",
+      "css": ".ds-sector-card { background-color: var(--bg-soft, #f4f5fa); border: 1px solid var(--line-subtle, #e1e4f0); border-radius: 24px; padding: 1.75rem; display: flex; flex-direction: column; gap: 1.1rem; font-family: 'Plus Jakarta Sans', sans-serif; } .ds-sector-top { display: flex; justify-content: space-between; align-items: center; } .ds-sector-pill { background: var(--brand-indigo, #4b53a4); color: #fff; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.35rem 0.85rem; border-radius: 9999px; } .ds-sector-meta { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-muted, #585e74); } .ds-scope-matrix { margin: 0; border-top: 1px solid var(--line-subtle, #e1e4f0); border-bottom: 1px solid var(--line-subtle, #e1e4f0); padding: 0.85rem 0; display: flex; flex-direction: column; gap: 0.65rem; } .ds-scope-row { display: grid; grid-template-columns: 120px 1fr; gap: 0.75rem; font-size: 0.84rem; } .ds-scope-row dt { font-weight: 700; color: var(--brand-indigo, #4b53a4); } .ds-scope-row dd { margin: 0; font-weight: 600; color: var(--ink-black, #0d0f18); } .ds-sector-footer { display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; } .ds-sector-title { margin: 0 0 0.25rem; font-family: 'Archivo', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--ink-black, #0d0f18); } .ds-sector-sub { margin: 0; font-size: 0.84rem; color: var(--ink-secondary, #383d52); } .ds-corner-btn { width: 42px; height: 42px; border-radius: 50%; background: #fff; color: var(--ink-black, #0d0f18); display: inline-grid; place-items: center; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, color 0.2s ease; } .ds-corner-btn:hover { background: var(--brand-indigo, #4b53a4); color: #fff; transform: scale(1.06) rotate(45deg); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Architectural Cutout Bento",
+    "overview": "HYBRID Electro Mechanical L.L.C's visual system translates heavy UAE electromechanical contracting—low-voltage switchgear, structured cabling, high-rise manifold piping, and chilled-water HVAC plants—into a crisp, high-contrast architectural bento showcase inspired by the BAU CARGO editorial layout. Rather than burying engineering capability inside dark industrial clichés or generic stock-photo cards, the system treats real MEP machinery and field crews as sculptural, transparent-background cutouts staged directly over cool architectural grey (#f4f5fa), stark studio white (#ffffff), and authoritative HYBRID royal indigo (#4b53a4) slabs.\n\nEvery section alternates between airy geometric blueprint-pattern backdrops and solid rounded bento containers (24px radius). Oversized lowercase display typography (Archivo 900) anchors the top of the page like an architectural supergraphic, while structured scope matrices, tabular numeric counters, and pill-shaped action controls with circular ↗ badges guide developers, main contractors, and facility managers directly toward tender inquiries.",
+    "keyCharacteristics": [
+      "Edge-to-edge lowercase display supergraphics paired with frameless 3D industrial MEP cutouts.",
+      "High-contrast tonal layering across Studio White (#ffffff), Cool Architectural Grey (#f4f5fa), Royal Indigo (#4b53a4), and Deep Obsidian (#0d0f18).",
+      "Split-column service bento cards where transparent-background technician cutouts anchor flush to the bottom-right corner.",
+      "Subtle isometric geometric lattice (Pattern.png) integrated at low opacity (4.5% on light surfaces, 12% screen-blended on indigo/dark banners).",
+      "Pill CTAs (9999px radius) with nested circular ↗ icon badges that rotate 45deg on hover."
+    ],
+    "rules": [
+      {
+        "name": "The Four-Surface Discipline Rule",
+        "body": "Every section and card surface must resolve to one of four canonical fills: Studio White (#ffffff), Cool Architectural Grey (#f4f5fa), HYBRID Royal Indigo (#4b53a4), or Deep Obsidian Ink (#0d0f18). Never introduce off-palette pastel cards or multi-stop decorative gradients.",
+        "section": "colors"
+      },
+      {
+        "name": "The Subtle Lattice Rule",
+        "body": "The geometric brand pattern (assets/pattern.png) is applied at 4.5% opacity (mix-blend-mode: multiply) on light sections and 10%–12% opacity (mix-blend-mode: screen) on indigo and obsidian banners—never behind dense form inputs or at full opacity.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tabular Counter Rule",
+        "body": "All numerical statistics (200+, 30+, 5+, 98%) and telephone/P.O. Box strings must set font-variant-numeric: tabular-nums so animated counters and contact figures never jitter horizontally.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-At-Rest Bento Rule",
+        "body": "Bento cards (#f4f5fa) sit flat at rest with a 1px solid #e1e4f0 border; ambient box-shadows appear only on interactive hover or on fixed viewport overlays.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve transparent backgrounds on all cutout assets (hero-plant-cutout.png, the 4 service division cutouts, and contact-handshake.png) so they sit directly on #ffffff, #f4f5fa, or #0d0f18 surfaces without rectangular photo boxes.",
+      "Do keep every bento card on #f4f5fa with a 24px border-radius (22px on mobile) and a 1px solid #e1e4f0 border.",
+      "Do use each of the 8 project photographs exactly once in its designated section role with zero repetition across the page.",
+      "Do maintain font-variant-numeric: tabular-nums on all stat counters (200+, 30+, 5+, 98%) and contact phone numbers."
+    ],
+    "donts": [
+      "Don't nest white cards inside #f4f5fa bento cards (such as boxed inner diagram canvases or boxed icon tiles); place scope matrices and icons directly on the card surface.",
+      "Don't draw decorative SVG illustrations that imitate buildings, houses, or machinery; use real photography cutouts for physical subjects and restrict SVGs to crisp 28px–40px functional engineering symbols and directional arrows.",
+      "Don't use colored glow shadows (rgba(31, 168, 85, ...) or indigo neon glows) on buttons or floating controls; use neutral obsidian shadows (rgba(13, 15, 24, 0.22)).",
+      "Don't allow the hero section to push the #4b53a4 About Us banner completely below the 900px desktop fold."
+    ]
+  }
+}

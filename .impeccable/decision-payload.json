@@ -1,0 +1,243 @@
+{
+  "title": "Choose the visual direction for HYBRID Electromechanical",
+  "question": "Both top options honor your BAU CARGO cutout aesthetic, #f4f5fa / #4b53a4 / #ffffff palette, and Pattern.png texture. Pick the structural composition to build.",
+  "options": [
+    {
+      "id": "assigned",
+      "kind": "assigned",
+      "label": "MEP Coordination Ledger",
+      "kicker": "THE ROLL",
+      "lineage": "Architectural MEP riser & coordination sheets fused with BAU CARGO cutout cards",
+      "thesis": "Cutout engineering crews break the top edge of #f4f5fa cards along a shared #4b53a4 datum rail.",
+      "palette": [
+        "#f4f5fa",
+        "#4b53a4",
+        "#ffffff",
+        "#0d0f18"
+      ],
+      "materials": [
+        "cutout industrial photography",
+        "Pattern.png watermark lattice"
+      ],
+      "viewport": "Full-width HYBRID display wordmark over the 3-tier hard-hat plant cutout, with a #4b53a4 mission banner below.",
+      "risk": "Technical datum tags must stay minimal so the page remains breathable.",
+      "raised": [
+        {
+          "from": "challenger-coptic",
+          "raise": "A continuous vertical riser line connects all 8 sections down a shared axis."
+        },
+        {
+          "from": "challenger-character",
+          "raise": "Interactive discipline pills filter and highlight matching MEP services and projects."
+        },
+        {
+          "from": "challenger-flyer",
+          "raise": "Transparent cutout figures overlap and break out of card frames for spatial depth."
+        },
+        {
+          "from": "challenger-cutting",
+          "raise": "Stats counters and project cards snap along a fixed-pitch horizontal rail."
+        }
+      ],
+      "html": ".impeccable/mocks/decision/assigned.html",
+      "comp": ".impeccable/mocks/decision/assigned.png"
+    },
+    {
+      "id": "model-pick",
+      "kind": "pick",
+      "label": "BAU CARGO Cutout Bento",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Direct translation of your BAU CARGO reference into HYBRID's brand system",
+      "thesis": "Colossal wordmark header, floating cutout plant hero, and rounded #f4f5fa bento cards with arrow-pill actions.",
+      "palette": [
+        "#f4f5fa",
+        "#4b53a4",
+        "#ffffff",
+        "#11131a"
+      ],
+      "materials": [
+        "frameless PNG cutouts",
+        "soft #f4f5fa bento cards"
+      ],
+      "viewport": "Giant 'HYBRID' display type spanning the top above the cutout MEP plant and pill CTAs, followed by a rounded #4b53a4 About banner.",
+      "risk": "Closest to the reference layout you shared, trading experimental novelty for proven conversion clarity.",
+      "html": ".impeccable/mocks/decision/model-pick.html",
+      "comp": ".impeccable/mocks/decision/model-pick.png"
+    },
+    {
+      "id": "challenger-quote",
+      "kind": "challenger",
+      "catalogId": "textiles-weave-drape-fashion-industrial-quote-grammar",
+      "label": "Stenciled Spec Grammar",
+      "verdict": "competitive",
+      "lineage": "Industrial stenciled crate & specification tag grammar",
+      "thesis": "Every MEP zone and cutout assembly is tagged with bold quoted spec plates and diagonal structure stripes.",
+      "palette": [
+        "#f4f5fa",
+        "#4b53a4",
+        "#ffffff",
+        "#0a0a0f"
+      ],
+      "materials": [
+        "quoted spec plates",
+        "45-degree technical hatch"
+      ],
+      "viewport": "Quoted 'HYBRID MEP' headline with stenciled division tags and cutout plant structure.",
+      "case": "Translates cleanly into industrial equipment tagging, though slightly busier than the reference.",
+      "risk": "Quoted labels can feel stylized if overused on formal B2B copy.",
+      "html": ".impeccable/mocks/decision/challenger-quote.html",
+      "comp": ".impeccable/mocks/decision/challenger-quote.png",
+      "hero": "https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-industrial-quote-grammar-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-industrial-quote-grammar.webp"
+    },
+    {
+      "id": "challenger-specimen",
+      "kind": "challenger",
+      "catalogId": "variable-font-specimen",
+      "label": "Scale-Contrast Specimen Grid",
+      "verdict": "competitive",
+      "lineage": "Interactive typographic specimen grid with live axis scale",
+      "thesis": "Enormous display typography and numerical counters carry the hierarchy against tiny technical labels and cutout plates.",
+      "palette": [
+        "#ffffff",
+        "#f4f5fa",
+        "#4b53a4",
+        "#090a0f"
+      ],
+      "materials": [
+        "colossal display type",
+        "hairline baseline grid"
+      ],
+      "viewport": "Edge-to-edge 'HYBRID' display letters with interactive weight/scale emphasis and cutout MEP plant.",
+      "case": "Echoes the massive 'bau cargo' display wordmark from your inspiration image with ultra-minimal copy.",
+      "risk": "Requires careful image scaling so typography does not overpower the cutout photos.",
+      "html": ".impeccable/mocks/decision/challenger-specimen.html",
+      "comp": ".impeccable/mocks/decision/challenger-specimen.png",
+      "hero": "https://impeccable.style/worlds/cards/variable-font-specimen-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/variable-font-specimen.webp"
+    },
+    {
+      "id": "challenger-coptic",
+      "kind": "challenger",
+      "catalogId": "craft-making-coptic-exposed-binding",
+      "label": "Coptic Exposed Binding",
+      "verdict": "declined",
+      "lineage": "Exposed chain-stitch bookbinding",
+      "thesis": "Sections strung along an exposed vertical spine that opens flat.",
+      "palette": [
+        "#f4f5fa",
+        "#4b53a4",
+        "#ffffff"
+      ],
+      "materials": [
+        "exposed spine links",
+        "flat-open spreads"
+      ],
+      "viewport": "Two-page flat spread divided by a stitched spine.",
+      "case": "Bookbinding craft does not match UAE electromechanical contracting.",
+      "risk": "Reads like an editorial publication rather than an MEP contractor.",
+      "kept": "Visible vertical riser spine connecting sections along a shared axis.",
+      "hero": "https://impeccable.style/worlds/cards/craft-making-coptic-exposed-binding-hero.webp"
+    },
+    {
+      "id": "challenger-character",
+      "kind": "challenger",
+      "catalogId": "pop-culture-shelf-devianart-character-sheet",
+      "label": "Multi-View Swatch Sheet",
+      "verdict": "declined",
+      "lineage": "Reference sheet with interactive swatch-to-region highlighting",
+      "thesis": "Four views ranged across the sheet controlled by interactive swatches.",
+      "palette": [
+        "#f4f5fa",
+        "#4b53a4",
+        "#ffffff"
+      ],
+      "materials": [
+        "swatch controls",
+        "region highlights"
+      ],
+      "viewport": "Four discipline views linked to a row of interactive category pills.",
+      "case": "Amateur character sheet aesthetic conflicts with B2B engineering authority.",
+      "risk": "Too informal for corporate and government MEP tenders.",
+      "kept": "Interactive discipline pills that highlight corresponding service and project regions.",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-devianart-character-sheet-hero.webp"
+    },
+    {
+      "id": "challenger-flyer",
+      "kind": "challenger",
+      "catalogId": "posters-covers-sleeves-torn-flyer-photocopy-wall",
+      "label": "Torn Layer Wall",
+      "verdict": "declined",
+      "lineage": "Layered poster wall with torn reveals",
+      "thesis": "Stacked layers peeled back to reveal earlier project strata.",
+      "palette": [
+        "#f4f5fa",
+        "#4b53a4",
+        "#ffffff"
+      ],
+      "materials": [
+        "layered stock",
+        "depth reveals"
+      ],
+      "viewport": "Stacked project strata with overlapping foreground cutouts.",
+      "case": "Distressed photocopy textures contradict precision MEP engineering.",
+      "risk": "Clashes with the clean, breathable BAU CARGO aesthetic.",
+      "kept": "Cutout figures breaking past card borders to create foreground/background depth.",
+      "hero": "https://impeccable.style/worlds/cards/posters-covers-sleeves-torn-flyer-photocopy-wall-hero.webp"
+    },
+    {
+      "id": "challenger-cutting",
+      "kind": "challenger",
+      "catalogId": "operate-a-cutting-bench-select-rail",
+      "label": "Perforated Select Rail",
+      "verdict": "declined",
+      "lineage": "Film cutting bench with horizontal frame rail",
+      "thesis": "Sections strung as frames along a fixed-pitch horizontal rail.",
+      "palette": [
+        "#f4f5fa",
+        "#4b53a4",
+        "#ffffff"
+      ],
+      "materials": [
+        "horizontal frame rail",
+        "punched windows"
+      ],
+      "viewport": "Horizontal project rail with fixed-pitch frame snapping.",
+      "case": "Film editing metaphors do not resonate with construction stakeholders.",
+      "risk": "Obscures standard vertical landing-page scanability.",
+      "kept": "Fixed-pitch horizontal carousel snapping for the Projects showcase.",
+      "hero": "https://impeccable.style/worlds/cards/operate-a-cutting-bench-select-rail-hero.webp"
+    }
+  ],
+  "reroll": {
+    "registers": [
+      "safer",
+      "bolder"
+    ]
+  },
+  "buildPath": {
+    "value": "code",
+    "toggle": true
+  },
+  "canon": true,
+  "canonCard": {
+    "kind": "canon",
+    "label": "Corporate MEP Standard",
+    "thesis": "Conventional UAE corporate MEP contracting website executed cleanly.",
+    "palette": [
+      "#ffffff",
+      "#f4f5fa",
+      "#4b53a4",
+      "#111827"
+    ],
+    "materials": [
+      "standard 3-column grid",
+      "boxed cards"
+    ],
+    "viewport": "Left-aligned hero copy with CTA buttons beside the cutout plant image, over a 4-column stats bar.",
+    "risk": "Familiar corporate layout without the distinctive BAU CARGO oversized wordmark and bento rhythm.",
+    "html": ".impeccable/mocks/decision/canon.html",
+    "comp": ".impeccable/mocks/decision/canon.png"
+  },
+  "steer": true
+}

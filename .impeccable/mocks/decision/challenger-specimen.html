@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scale-Contrast Specimen Grid</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1440px; height: 900px; overflow: hidden;
+    background: #ffffff; color: #090a0f;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .top-rule {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 48px; border-bottom: 1px solid #e5e7eb;
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  }
+  .specimen-word {
+    font-size: 220px; font-weight: 800; line-height: 0.82;
+    letter-spacing: -0.05em; color: #4b53a4; padding: 20px 44px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .specimen-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1.2fr; height: 590px;
+  }
+  .cell {
+    border-right: 1px solid #e5e7eb; padding: 36px 44px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .cell-tinted { background: #f4f5fa; }
+  .huge-num { font-size: 104px; font-weight: 800; line-height: 0.9; color: #090a0f; }
+  .cell h2 { font-size: 30px; line-height: 1.2; font-weight: 800; }
+  .cta {
+    background: #4b53a4; color: #fff; padding: 14px 26px; border-radius: 999px;
+    font-size: 15px; font-weight: 600; display: inline-block; align-self: flex-start;
+  }
+  .cutout-frame {
+    height: 440px; background: #4b53a4; border-radius: 24px;
+    color: #fff; display: grid; place-items: center; font-size: 26px; font-weight: 800;
+  }
+</style>
+</head>
+<body>
+  <div class="top-rule">
+    <span>HYBRID ELECTRO MECHANICAL L.L.C // DUBAI, UAE</span>
+    <span>[01] ELECTRICAL  [02] LOW CURRENT  [03] PLUMBING  [04] HVAC</span>
+    <span>+971 4 256 4036</span>
+  </div>
+  <div class="specimen-word">HYBRID</div>
+  <div class="specimen-grid">
+    <div class="cell">
+      <h2>Engineering Excellence. Delivering Reliability.</h2>
+      <div class="huge-num">200+</div>
+      <div class="cta">Explore Projects ↗</div>
+    </div>
+    <div class="cell cell-tinted">
+      <h2>98% Client Satisfaction Across 30+ Corporate Partners</h2>
+      <div class="huge-num">98%</div>
+    </div>
+    <div class="cell">
+      <div class="cutout-frame">CUTOUT MEP PLANT SPECIMEN</div>
+    </div>
+  </div>
+</body>
+</html>

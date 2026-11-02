@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MEP Coordination Ledger</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1440px; height: 900px; overflow: hidden;
+    background: #ffffff; color: #0d0f18;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    position: relative;
+  }
+  .riser-line {
+    position: absolute; left: 72px; top: 0; bottom: 0;
+    width: 2px; background: rgba(75, 83, 164, 0.18);
+  }
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 24px 64px 20px 96px; border-bottom: 1px solid rgba(75,83,164,0.12);
+  }
+  .brand { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 24px; color: #4b53a4; letter-spacing: 0.08em; }
+  nav { display: flex; gap: 36px; font-size: 14px; font-weight: 500; color: #111; }
+  .cta-pill {
+    background: #0d0f18; color: #fff; padding: 10px 22px; border-radius: 999px;
+    font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px;
+  }
+  .cta-pill span { background: #fff; color: #0d0f18; width: 22px; height: 22px; border-radius: 50%; display: inline-grid; place-items: center; font-size: 12px; }
+  .hero {
+    padding: 18px 64px 0 96px; position: relative;
+  }
+  .wordmark {
+    font-family: 'Space Grotesk', sans-serif; font-size: 168px; font-weight: 700;
+    line-height: 0.88; letter-spacing: -0.04em; color: #0d0f18;
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .wordmark em { font-style: normal; font-size: 32px; color: #4b53a4; letter-spacing: 0.22em; font-weight: 600; }
+  .hero-grid {
+    display: grid; grid-template-columns: 460px 1fr; gap: 40px; margin-top: 28px; align-items: end;
+  }
+  .hero-copy { padding-bottom: 36px; }
+  .datum-tag {
+    display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.14em;
+    color: #4b53a4; background: #f4f5fa; padding: 6px 12px; border-radius: 6px; margin-bottom: 16px;
+  }
+  .hero-copy h1 { font-size: 36px; line-height: 1.15; font-weight: 700; margin-bottom: 14px; }
+  .hero-copy p { font-size: 15px; line-height: 1.6; color: #444; margin-bottom: 24px; }
+  .btn-row { display: flex; gap: 14px; }
+  .btn-outline { border: 1.5px solid #0d0f18; padding: 10px 22px; border-radius: 999px; font-size: 14px; font-weight: 600; }
+  .cutout-stage {
+    height: 360px; background: #f4f5fa; border-radius: 28px 28px 0 0;
+    position: relative; display: flex; align-items: flex-end; justify-content: center;
+    border-top: 3px solid #4b53a4; padding: 24px;
+  }
+  .cutout-sil {
+    width: 78%; height: 390px; background: linear-gradient(160deg, #4b53a4 0%, #2c326e 100%);
+    border-radius: 24px 24px 8px 8px; display: grid; place-items: center; color: #fff;
+    font-size: 24px; font-weight: 700; box-shadow: 0 24px 48px rgba(75,83,164,0.22);
+  }
+  .mission-band {
+    margin: 0 64px 0 96px; background: #4b53a4; color: #fff; border-radius: 24px;
+    padding: 34px 44px; display: grid; grid-template-columns: 360px 1fr 200px; gap: 36px; align-items: center;
+  }
+  .mission-band h2 { font-size: 28px; line-height: 1.2; font-weight: 700; }
+  .mission-band p { font-size: 15px; line-height: 1.6; opacity: 0.92; }
+  .band-btn { border: 1px solid rgba(255,255,255,0.45); color: #fff; padding: 12px 22px; border-radius: 999px; text-align: center; font-size: 14px; }
+</style>
+</head>
+<body>
+  <div class="riser-line"></div>
+  <header>
+    <div class="brand">HYBRID</div>
+    <nav><span>About</span><span>Services</span><span>Stats</span><span>Projects</span><span>Contact</span></nav>
+    <div class="cta-pill">Request Quote <span>↗</span></div>
+  </header>
+  <section class="hero">
+    <div class="wordmark">HYBRID <em>ELECTRO MECHANICAL L.L.C</em></div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="datum-tag">EST. 2022 · DUBAI, UAE</div>
+        <h1>Engineering Excellence. Delivering Reliability.</h1>
+        <p>Specialized MEP contracting across residential, retail, and commercial landmarks in the UAE.</p>
+        <div class="btn-row">
+          <div class="cta-pill">Explore Projects <span>↗</span></div>
+          <div class="btn-outline">Our Services ↗</div>
+        </div>
+      </div>
+      <div class="cutout-stage">
+        <div class="cutout-sil">3-TIER MODULAR MEP PLANT CUTOUT</div>
+      </div>
+    </div>
+  </section>
+  <section class="mission-band">
+    <h2>End-to-End MEP Execution Under One Roof</h2>
+    <p>Design, supply, installation, testing, and commissioning of electrical, low-current, plumbing, and HVAC networks with 98% client satisfaction.</p>
+    <div class="band-btn">200+ Projects ↗</div>
+  </section>
+</body>
+</html>
