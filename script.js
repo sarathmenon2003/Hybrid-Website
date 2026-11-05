@@ -3,6 +3,23 @@
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // 0. Scroll Theme Engine (White ⇄ HYBRID Blue)
+  const themedSections = document.querySelectorAll('[data-theme]');
+  if (themedSections.length && 'IntersectionObserver' in window) {
+    const themeObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            document.body.classList.toggle('theme-blue', entry.target.dataset.theme === 'blue');
+          }
+        });
+      },
+      // A section takes over once it crosses the middle of the viewport
+      { rootMargin: '-50% 0px -50% 0px', threshold: 0 }
+    );
+    themedSections.forEach((section) => themeObserver.observe(section));
+  }
+
   // 1. Mobile Navigation Drawer
   const menuToggle = document.querySelector('.mobile-menu-toggle');
   const mobileDrawer = document.getElementById('mobile-drawer');
@@ -30,7 +47,20 @@
     });
   }
 
-  // 2. Turnkey MEP Execution Lifecycle Filter Pills
+  // 2. Service Division Cards Touch / Click Toggle
+  const serviceCards = document.querySelectorAll('.service-cutout-card');
+  serviceCards.forEach((card) => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
+      const wasExpanded = card.classList.contains('is-expanded');
+      serviceCards.forEach((c) => c.classList.remove('is-expanded'));
+      if (!wasExpanded) {
+        card.classList.add('is-expanded');
+      }
+    });
+  });
+
+  // 3. Turnkey MEP Execution Lifecycle Filter Pills
   const cycleTabs = document.querySelectorAll('.cycle-tab');
   const cycleCards = document.querySelectorAll('.cycle-step-card');
 
@@ -130,7 +160,147 @@
     });
   }
 
-  // 5. Minimal Contact Form Validation & Submission State
+  // 5. Project Details Modal Popup
+  const projectData = {
+    residential: {
+      title: 'Residential Development Project',
+      sector: 'Residential',
+      status: 'UAE Sector Scope',
+      summary: 'Turnkey electromechanical contracting for modern residential communities and high-end villas. Encompasses DEWA-compliant power distribution, smart living connectivity, and premium water distribution networks.',
+      specs: [
+        { label: 'Electrical & ELV', desc: 'MDB, SMDB & DB panels, interior architectural LED lighting, perimeter lighting, structured Cat6A data points, and smart home automation.' },
+        { label: 'HVAC & Mechanical', desc: 'High-efficiency chilled water FCUs, duct insulated networks, fresh air handling, and smart digital thermostats.' },
+        { label: 'Plumbing & Drainage', desc: 'Hot & cold PPR water distribution lines, centralized water heating, booster pump manifolds, and sanitary fittings fit-out.' },
+        { label: 'Authority Handover', desc: 'Complete civil defence, DEWA, and municipality approvals with certified as-built documentation.' }
+      ]
+    },
+    corporate: {
+      title: 'Corporate Commercial Tower',
+      sector: 'Corporate',
+      status: 'UAE Sector Scope',
+      summary: 'Full-scope MEP design, supply, installation, and commissioning for multi-story corporate headquarters and grade-A commercial office developments.',
+      specs: [
+        { label: 'Electrical & ELV', desc: 'LV switchgear assembly, busbar risers, essential UPS circuits, biometric access control, and enterprise CCTV monitoring.' },
+        { label: 'HVAC & Mechanical', desc: 'Central chilled water plant connection, precision server room cooling, variable air volume (VAV) systems, and air balancing.' },
+        { label: 'Plumbing & Sanitation', desc: 'High-rise water booster stations, storm drainage risers, dedicated washroom batteries, and water metering systems.' },
+        { label: 'Authority Handover', desc: 'Consultant coordination, technical material approvals, third-party testing, and turnkey authority inspection.' }
+      ]
+    },
+    retail: {
+      title: 'Retail & Showroom Complex',
+      sector: 'Retail',
+      status: 'UAE Sector Scope',
+      summary: 'Fast-track electromechanical installation tailored for luxury retail flagships, multi-brand showrooms, and shopping mall fit-outs in Dubai and the wider UAE.',
+      specs: [
+        { label: 'Electrical & ELV', desc: 'High-CRI accent lighting track systems, sub-metering boards, public address (PA) audio, and theft-prevention EAS cabling.' },
+        { label: 'HVAC & Mechanical', desc: 'Mall chilled water tie-ins, rooftop package unit ducting, custom linear slot diffusers, and smoke extraction.' },
+        { label: 'Plumbing & Safety', desc: 'Staff pantry water services, drainage connections, grease interceptor tie-ins, and fire hose reel/sprinkler coordination.' },
+        { label: 'Authority Handover', desc: 'Mall facility management liaison, out-of-hours testing, load balance submittals, and fast-track permit closures.' }
+      ]
+    },
+    hospitality: {
+      title: 'Hospitality & Luxury Suites',
+      sector: 'Hospitality',
+      status: 'UAE Sector Scope',
+      summary: 'Acoustically isolated, high-comfort MEP contracting designed for luxury hotel suites, resorts, and premium serviced residences.',
+      specs: [
+        { label: 'Electrical & ELV', desc: 'Guest Room Management System (GRMS), bespoke mood lighting controls, high-speed Wi-Fi access points, and IPTV network lines.' },
+        { label: 'HVAC & Mechanical', desc: 'Ultra-low acoustic NC-25 chilled water FCUs, insulated sound attenuators, continuous bathroom extract, and fresh air supply.' },
+        { label: 'Plumbing & Drainage', desc: 'Instantaneous hot water circulation loops, pressure-balanced thermostatic mixers, luxury concealed cisterns, and acoustic drainage pipes.' },
+        { label: 'Authority Handover', desc: 'Comprehensive thermal performance commissioning, sound level verification, and turnkey hotel operator sign-off.' }
+      ]
+    },
+    healthcare: {
+      title: 'Healthcare & Clinic Facility',
+      sector: 'Healthcare',
+      status: 'UAE Sector Scope',
+      summary: 'Stringent clinical-grade electromechanical installations compliant with UAE health authority and international hospital safety standards.',
+      specs: [
+        { label: 'Electrical & ELV', desc: 'Isolated power supplies (IPS), medical-grade grounding, uninterruptible power systems (UPS), and nurse call stations.' },
+        { label: 'HVAC & Mechanical', desc: 'HEPA filtration air handling units, positive/negative pressure isolation rooms, laminar flow systems, and medical gas duct coordination.' },
+        { label: 'Plumbing & Drainage', desc: 'Medical washbasin touchless fittings, chemical-resistant drainage piping, and pure water purification distribution.' },
+        { label: 'Authority Handover', desc: 'DHA / MOH health regulations compliance, air particulate validation, and sterilisation testing certification.' }
+      ]
+    },
+    education: {
+      title: 'Educational Campus Facility',
+      sector: 'Education',
+      status: 'UAE Sector Scope',
+      summary: 'High-durability, energy-efficient MEP infrastructure engineered for educational campuses, laboratories, sports complexes, and auditoriums.',
+      specs: [
+        { label: 'Electrical & ELV', desc: 'Outdoor feeder pillars, classroom presentation AV cabling, synchronized campus PA/emergency broadcast, and secure campus perimeter CCTV.' },
+        { label: 'HVAC & Mechanical', desc: 'High-volume central chiller plant distribution, lab exhaust fume extraction, and energy-recovery ventilation (ERV).' },
+        { label: 'Plumbing & Sanitation', desc: 'Heavy-traffic student washroom plumbing batteries, safety eyewash stations, centralized water storage reservoirs, and pump stations.' },
+        { label: 'Authority Handover', desc: 'Ministry of Education compliance, utility sub-station energisation, and comprehensive preventive maintenance schedule.' }
+      ]
+    }
+  };
+
+  const projectModal = document.getElementById('project-modal');
+  const modalCloseBtn = document.getElementById('modal-close-btn');
+  const modalTitle = document.getElementById('modal-project-title');
+  const modalSummary = document.getElementById('modal-project-summary');
+  const modalSectorBadge = document.getElementById('modal-sector-badge');
+  const modalStatusBadge = document.getElementById('modal-status-badge');
+  const modalSpecsList = document.getElementById('modal-specs-list');
+
+  const openProjectModal = (projectId) => {
+    const data = projectData[projectId];
+    if (!data || !projectModal) return;
+
+    modalTitle.textContent = data.title;
+    modalSummary.textContent = data.summary;
+    modalSectorBadge.textContent = data.sector;
+    modalStatusBadge.textContent = data.status;
+
+    modalSpecsList.innerHTML = data.specs.map((item) => `
+      <div class="modal-spec-item">
+        <dt>${item.label}</dt>
+        <dd>${item.desc}</dd>
+      </div>
+    `).join('');
+
+    projectModal.classList.add('is-open');
+    projectModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    modalCloseBtn?.focus();
+  };
+
+  const closeProjectModal = () => {
+    if (!projectModal) return;
+    projectModal.classList.remove('is-open');
+    projectModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  document.querySelectorAll('.project-card').forEach((card) => {
+    card.addEventListener('click', () => {
+      const pId = card.getAttribute('data-project-id');
+      if (pId) openProjectModal(pId);
+    });
+
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const pId = card.getAttribute('data-project-id');
+        if (pId) openProjectModal(pId);
+      }
+    });
+  });
+
+  modalCloseBtn?.addEventListener('click', closeProjectModal);
+
+  projectModal?.addEventListener('click', (e) => {
+    if (e.target === projectModal) closeProjectModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && projectModal?.classList.contains('is-open')) {
+      closeProjectModal();
+    }
+  });
+
+  // 6. Minimal Contact Form Validation & Submission State
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     const nameInput = document.getElementById('contact-name');

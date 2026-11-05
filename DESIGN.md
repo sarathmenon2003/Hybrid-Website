@@ -33,12 +33,12 @@ typography:
     lineHeight: 1.2
     letterSpacing: "-0.02em"
   body:
-    fontFamily: "Plus Jakarta Sans, system-ui, -apple-system, sans-serif"
+    fontFamily: "Public Sans, system-ui, -apple-system, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.65
   label:
-    fontFamily: "Plus Jakarta Sans, system-ui, -apple-system, sans-serif"
+    fontFamily: "Public Sans, system-ui, -apple-system, sans-serif"
     fontSize: "0.75rem"
     fontWeight: 700
     lineHeight: 1.2

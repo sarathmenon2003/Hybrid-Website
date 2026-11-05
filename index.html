@@ -57,7 +57,7 @@
 
   <main>
     <!-- 1. Hero Section -->
-    <section class="hero-section pattern-surface">
+    <section class="hero-section pattern-surface" data-theme="light">
       <div class="hero-inner">
         <div class="hero-grid">
           <div class="hero-content">
@@ -101,7 +101,7 @@
     </section>
 
     <!-- 2. About Us Section -->
-    <section id="about" class="about-section">
+    <section id="about" class="about-section" data-theme="light">
       <div class="container">
         <div class="about-banner pattern-indigo">
           <div class="about-banner-heading">
@@ -201,10 +201,10 @@
     </section>
 
     <!-- 3. Services Section -->
-    <section id="services" class="services-section pattern-surface">
+    <section id="services" class="services-section pattern-surface" data-theme="blue">
       <div class="container">
         <div class="section-header-row">
-          <h2>Core Electromechanical Divisions</h2>
+          <h2>Our Services</h2>
           <a href="#contact" class="inline-arrow-link">
             <span>Request Technical Submittal</span>
             <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -214,172 +214,226 @@
         </div>
 
         <div class="services-bento-grid">
-          <!-- Service Card 1: Electrical -->
-          <article class="service-cutout-card">
-            <div class="service-card-top">
-              <div>
-                <div class="service-title-row">
-                  <span class="service-icon-box" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                    </svg>
-                  </span>
-                  <h3>Electrical Services</h3>
+          <!-- Row 1: Electrical & Low Current -->
+          <div class="services-bento-row">
+            <!-- Service Card 1: Electrical -->
+            <article class="service-cutout-card" tabindex="0">
+              <div class="service-card-top">
+                <div class="service-card-body">
+                  <div class="service-title-row">
+                    <span class="service-icon-box" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                      </svg>
+                    </span>
+                    <h3>Electrical Services</h3>
+                  </div>
+                  <p class="service-summary">
+                    Safe, code-compliant Low Voltage power distribution, switchgear assembly, and lighting infrastructure.
+                  </p>
+
+                  <div class="service-expand-drawer">
+                    <div class="service-expand-inner">
+                      <p class="service-deep-copy">
+                        Turnkey DEWA and authority-compliant electrical execution—from load schedules, voltage-drop calculations, and shop drawings to panel termination, live testing, and final commissioning.
+                      </p>
+                      <ul class="service-scope-list">
+                        <li><strong>LV Switchgear (MDB / SMDB / DB):</strong> Installation, testing, commissioning &amp; panel upgrading</li>
+                        <li><strong>Power Distribution:</strong> Main feeder cabling, sub-main circuits &amp; heavy machinery wiring</li>
+                        <li><strong>Control &amp; Automation Panels:</strong> Custom assembly, internal wiring &amp; motor control centers</li>
+                        <li><strong>Lighting &amp; Feeder Pillars:</strong> Interior, architectural façade, emergency &amp; outdoor enclosures</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <p class="service-summary">
-                  Safe, code-compliant Low Voltage power distribution, switchgear assembly, and lighting infrastructure.
-                </p>
-                <ul class="service-scope-list">
-                  <li>MDBs, SMDBs &amp; DBs for LV distribution</li>
-                  <li>Main power circuits &amp; heavy equipment wiring</li>
-                  <li>Electrical &amp; automation control panels</li>
-                  <li>Outdoor feeder pillars &amp; emergency lighting</li>
-                </ul>
-              </div>
-              <a href="#contact" class="card-corner-btn" aria-label="Inquire about Electrical Services">
-                <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 12L12 4M6 4h6v6"/>
-                </svg>
-              </a>
-            </div>
 
-            <div class="service-card-Visual">
-              <img
-                src="assets/service-electrical-cutout.png"
-                alt="HYBRID technicians on ladders servicing low-voltage electrical distribution boards and control panels"
-                class="service-cutout-photo"
-                width="1200"
-                height="1061"
-                loading="lazy"
-              >
-            </div>
-          </article>
-
-          <!-- Service Card 2: Low Current -->
-          <article class="service-cutout-card">
-            <div class="service-card-top">
-              <div>
-                <div class="service-title-row">
-                  <span class="service-icon-box" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
-                      <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
-                      <line x1="6" y1="6" x2="6.01" y2="6"/>
-                      <line x1="6" y1="18" x2="6.01" y2="18"/>
+                <div class="service-card-footer">
+                  <a href="#contact" class="card-corner-btn" aria-label="Inquire about Electrical Services">
+                    <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 12L12 4M6 4h6v6"/>
                     </svg>
-                  </span>
-                  <h3>Low Current Systems</h3>
+                  </a>
+                  <span class="service-expand-label">Explore Scope</span>
                 </div>
-                <p class="service-summary">
-                  Structured data cabling, enterprise security monitoring, and intelligent building automation networks.
-                </p>
-                <ul class="service-scope-list">
-                  <li>Structured cabling, LAN, Wi-Fi &amp; data racks</li>
-                  <li>CCTV video surveillance &amp; biometric access</li>
-                  <li>Intercom, EPABX &amp; voice communication</li>
-                  <li>PA audio-video &amp; smart home automation</li>
-                </ul>
               </div>
-              <a href="#contact" class="card-corner-btn" aria-label="Inquire about Low Current Systems">
-                <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 12L12 4M6 4h6v6"/>
-                </svg>
-              </a>
-            </div>
 
-            <div class="service-card-Visual">
-              <img
-                src="assets/service-lowcurrent-cutout.png"
-                alt="HYBRID installation crew routing structured cabling across server racks"
-                class="service-cutout-photo"
-                width="915"
-                height="804"
-                loading="lazy"
-              >
-            </div>
-          </article>
+              <div class="service-card-visual">
+                <img
+                  src="assets/service-electrical-cutout.png"
+                  alt="HYBRID technicians on ladders servicing low-voltage electrical distribution boards and control panels"
+                  class="service-cutout-photo"
+                  width="1200"
+                  height="1061"
+                  loading="lazy"
+                >
+              </div>
+            </article>
 
-          <!-- Service Card 3: Plumbing -->
-          <article class="service-cutout-card">
-            <div class="service-card-top">
-              <div>
-                <div class="service-title-row">
-                  <span class="service-icon-box" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            <!-- Service Card 2: Low Current -->
+            <article class="service-cutout-card" tabindex="0">
+              <div class="service-card-top">
+                <div class="service-card-body">
+                  <div class="service-title-row">
+                    <span class="service-icon-box" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                        <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                        <line x1="6" y1="6" x2="6.01" y2="6"/>
+                        <line x1="6" y1="18" x2="6.01" y2="18"/>
+                      </svg>
+                    </span>
+                    <h3>Low Current Systems</h3>
+                  </div>
+                  <p class="service-summary">
+                    Structured data cabling, enterprise security monitoring, and intelligent building automation networks.
+                  </p>
+
+                  <div class="service-expand-drawer">
+                    <div class="service-expand-inner">
+                      <p class="service-deep-copy">
+                        Integrated ELV and smart-building infrastructure engineered for high-availability commercial towers, hospitality venues, retail spaces, and modern residential developments.
+                      </p>
+                      <ul class="service-scope-list">
+                        <li><strong>Data &amp; Network Infrastructure:</strong> Structured Cat6A/Fiber cabling, LAN, Wi-Fi &amp; server racks</li>
+                        <li><strong>CCTV &amp; Access Control:</strong> IP surveillance monitoring, biometric readers &amp; gate barriers</li>
+                        <li><strong>Telecom &amp; Audio-Visual:</strong> Intercom, EPABX voice networks, PA systems &amp; conference AV</li>
+                        <li><strong>Smart Home Automation:</strong> Centralized control for lighting scenes, HVAC, shading &amp; security</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="service-card-footer">
+                  <a href="#contact" class="card-corner-btn" aria-label="Inquire about Low Current Systems">
+                    <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 12L12 4M6 4h6v6"/>
                     </svg>
-                  </span>
-                  <h3>Plumbing Services</h3>
+                  </a>
+                  <span class="service-expand-label">Explore Scope</span>
                 </div>
-                <p class="service-summary">
-                  High-durability water supply manifolds, temperature-controlled pipelines, and drainage networks.
-                </p>
-                <ul class="service-scope-list">
-                  <li>HDPE, PPR, Copper, uPVC &amp; Mild Steel piping</li>
-                  <li>Hot &amp; cold water distribution &amp; mixers</li>
-                  <li>Waste, sewage &amp; storm drainage lines</li>
-                  <li>Commercial &amp; residential sanitary ware fit-out</li>
-                </ul>
               </div>
-              <a href="#contact" class="card-corner-btn" aria-label="Inquire about Plumbing Services">
-                <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 12L12 4M6 4h6v6"/>
-                </svg>
-              </a>
-            </div>
 
-            <div class="service-card-Visual">
-              <img
-                src="assets/service-plumbing-cutout.png"
-                alt="HYBRID plumbing technicians assembling a multi-line green pipe manifold"
-                class="service-cutout-photo"
-                width="745"
-                height="1200"
-                loading="lazy"
-              >
-            </div>
-          </article>
+              <div class="service-card-visual">
+                <img
+                  src="assets/service-lowcurrent-cutout.png"
+                  alt="HYBRID installation crew routing structured cabling across server racks"
+                  class="service-cutout-photo"
+                  width="915"
+                  height="804"
+                  loading="lazy"
+                >
+              </div>
+            </article>
+          </div>
 
-          <!-- Service Card 4: HVAC -->
-          <article class="service-cutout-card">
-            <div class="service-card-top">
-              <div>
-                <div class="service-title-row">
-                  <span class="service-icon-box" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/>
+          <!-- Row 2: Plumbing & HVAC -->
+          <div class="services-bento-row">
+            <!-- Service Card 3: Plumbing -->
+            <article class="service-cutout-card" tabindex="0">
+              <div class="service-card-top">
+                <div class="service-card-body">
+                  <div class="service-title-row">
+                    <span class="service-icon-box" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                      </svg>
+                    </span>
+                    <h3>Plumbing Services</h3>
+                  </div>
+                  <p class="service-summary">
+                    High-durability water supply manifolds, temperature-controlled pipelines, and drainage networks.
+                  </p>
+
+                  <div class="service-expand-drawer">
+                    <div class="service-expand-inner">
+                      <p class="service-deep-copy">
+                        Complete hydraulic piping, booster pump stations, and sanitary drainage systems pressure-tested and coordinated against multi-discipline MEP clashes for leak-free longevity.
+                      </p>
+                      <ul class="service-scope-list">
+                        <li><strong>Water Supply Piping:</strong> High-pressure HDPE, PPR, Copper, uPVC &amp; Mild Steel (MS) networks</li>
+                        <li><strong>Hot &amp; Cold Water Systems:</strong> Insulated circulation risers, central heaters &amp; mixing valves</li>
+                        <li><strong>Drainage &amp; Sewage Lines:</strong> Gravity waste, soil, vent &amp; storm-water discharge pipelines</li>
+                        <li><strong>Sanitary Ware Fit-Out:</strong> Commercial and luxury residential bathroom &amp; fixture installation</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="service-card-footer">
+                  <a href="#contact" class="card-corner-btn" aria-label="Inquire about Plumbing Services">
+                    <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 12L12 4M6 4h6v6"/>
                     </svg>
-                  </span>
-                  <h3>HVAC Services</h3>
+                  </a>
+                  <span class="service-expand-label">Explore Scope</span>
                 </div>
-                <p class="service-summary">
-                  Central chilled-water plants, rooftop package units, and insulated air distribution ductwork.
-                </p>
-                <ul class="service-scope-list">
-                  <li>Split, package &amp; chilled-water FCU installation</li>
-                  <li>Central water-chilling plants &amp; circulation piping</li>
-                  <li>Custom duct fabrication, installation &amp; insulation</li>
-                  <li>Air balancing, testing &amp; seasonal commissioning</li>
-                </ul>
               </div>
-              <a href="#contact" class="card-corner-btn" aria-label="Inquire about HVAC Services">
-                <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 12L12 4M6 4h6v6"/>
-                </svg>
-              </a>
-            </div>
 
-            <div class="service-card-Visual">
-              <img
-                src="assets/service-hvac-cutout.png"
-                alt="HYBRID HVAC technicians servicing industrial rooftop chillers and ductwork"
-                class="service-cutout-photo"
-                width="1091"
-                height="1199"
-                loading="lazy"
-              >
-            </div>
-          </article>
+              <div class="service-card-visual">
+                <img
+                  src="assets/service-plumbing-cutout.png"
+                  alt="HYBRID plumbing technicians assembling a multi-line green pipe manifold"
+                  class="service-cutout-photo"
+                  width="745"
+                  height="1200"
+                  loading="lazy"
+                >
+              </div>
+            </article>
+
+            <!-- Service Card 4: HVAC -->
+            <article class="service-cutout-card" tabindex="0">
+              <div class="service-card-top">
+                <div class="service-card-body">
+                  <div class="service-title-row">
+                    <span class="service-icon-box" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/>
+                      </svg>
+                    </span>
+                    <h3>HVAC Services</h3>
+                  </div>
+                  <p class="service-summary">
+                    Central chilled-water plants, rooftop package units, and insulated air distribution ductwork.
+                  </p>
+
+                  <div class="service-expand-drawer">
+                    <div class="service-expand-inner">
+                      <p class="service-deep-copy">
+                        High-efficiency climate control and ventilation engineered for demanding UAE ambient temperatures, acoustic comfort, and balanced air distribution across every zone.
+                      </p>
+                      <ul class="service-scope-list">
+                        <li><strong>AC &amp; FCU Installations:</strong> Split units, rooftop package units &amp; chilled-water Fan Coil Units</li>
+                        <li><strong>Chilled Water Systems:</strong> Central chillers, circulation pumps, valves &amp; insulated risers</li>
+                        <li><strong>Ducting Fabrication:</strong> Custom GI/PI ducting, thermal insulation &amp; fire/volume dampers</li>
+                        <li><strong>Air Balancing &amp; Commissioning:</strong> Volumetric TAB testing, start-up &amp; preventive maintenance</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="service-card-footer">
+                  <a href="#contact" class="card-corner-btn" aria-label="Inquire about HVAC Services">
+                    <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 12L12 4M6 4h6v6"/>
+                    </svg>
+                  </a>
+                  <span class="service-expand-label">Explore Scope</span>
+                </div>
+              </div>
+
+              <div class="service-card-visual">
+                <img
+                  src="assets/service-hvac-cutout.png"
+                  alt="HYBRID HVAC technicians servicing industrial rooftop chillers and ductwork"
+                  class="service-cutout-photo"
+                  width="1091"
+                  height="1199"
+                  loading="lazy"
+                >
+              </div>
+            </article>
+          </div>
         </div>
 
         <!-- Turnkey Execution Cycle (BAU CARGO style interactive capability pills) -->
@@ -449,49 +503,47 @@
     </section>
 
     <!-- 4. Stats Section (Number Counters) -->
-    <section id="stats" class="stats-section">
+    <section id="stats" class="stats-section pattern-surface" data-theme="blue">
       <div class="container">
-        <div class="stats-band pattern-indigo">
-          <div class="stats-intro">
-            <h2>Proven Delivery Across the Emirates</h2>
-            <p>Milestones verified across residential, commercial, retail, hospitality, healthcare, and education facilities.</p>
+        <div class="stats-header">
+          <h2>Proven Delivery Across the Emirates</h2>
+          <p>Milestones verified across residential, commercial, retail, hospitality, healthcare, and education facilities.</p>
+        </div>
+
+        <div class="stats-tiles-grid">
+          <div class="stat-tile">
+            <div class="stat-value">
+              <span class="js-counter" data-target="200">200</span><span class="stat-suffix">+</span>
+            </div>
+            <div class="stat-label">Projects Completed</div>
           </div>
 
-          <div class="stats-counters-row">
-            <div class="stat-cell">
-              <div class="stat-value">
-                <span class="js-counter" data-target="200">200</span><span class="stat-suffix">+</span>
-              </div>
-              <div class="stat-label">Projects Completed</div>
+          <div class="stat-tile">
+            <div class="stat-value">
+              <span class="js-counter" data-target="30">30</span><span class="stat-suffix">+</span>
             </div>
+            <div class="stat-label">Corporate Clients</div>
+          </div>
 
-            <div class="stat-cell">
-              <div class="stat-value">
-                <span class="js-counter" data-target="30">30</span><span class="stat-suffix">+</span>
-              </div>
-              <div class="stat-label">Corporate Clients</div>
+          <div class="stat-tile">
+            <div class="stat-value">
+              <span class="js-counter" data-target="5">5</span><span class="stat-suffix">+</span>
             </div>
+            <div class="stat-label">Years of Experience</div>
+          </div>
 
-            <div class="stat-cell">
-              <div class="stat-value">
-                <span class="js-counter" data-target="5">5</span><span class="stat-suffix">+</span>
-              </div>
-              <div class="stat-label">Years of Experience</div>
+          <div class="stat-tile">
+            <div class="stat-value">
+              <span class="js-counter" data-target="98">98</span><span class="stat-suffix">%</span>
             </div>
-
-            <div class="stat-cell">
-              <div class="stat-value">
-                <span class="js-counter" data-target="98">98</span><span class="stat-suffix">%</span>
-              </div>
-              <div class="stat-label">Client Satisfaction Rate</div>
-            </div>
+            <div class="stat-label">Client Satisfaction Rate</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 5. Projects Section -->
-    <section id="projects" class="projects-section pattern-surface">
+    <section id="projects" class="projects-section pattern-surface" data-theme="blue">
       <div class="container">
         <div class="section-header-row">
           <h2>Selected Project Sectors &amp; Scopes</h2>
@@ -509,233 +561,232 @@
           </div>
         </div>
 
-        <div class="projects-layout">
-          <!-- Featured Workforce / Quality Credential Visual (uses 7th unique photo: Worker in Branded Safety Gear.png) -->
-          <aside class="projects-feature-card">
-            <img
-              src="assets/projects-worker-branded.png"
-              alt="HYBRID engineer in branded blue safety vest and helmet"
-              class="projects-feature-img"
-              width="800"
-              height="1200"
-              loading="lazy"
-            >
-            <div class="projects-feature-overlay">
-              <h3>Dedicated Site Teams Across 6 Sectors</h3>
-              <p>Turnkey engineering, authority approvals, and site commissioning across residential, commercial, and institutional developments in the UAE.</p>
-            </div>
-          </aside>
+        <div class="projects-track-wrapper">
+          <div class="projects-track" id="projects-track" tabindex="0" aria-label="Projects showcase carousel">
 
-          <!-- Interactive Carousel of Project Placeholders (Replace titles & scopes when ready) -->
-          <div class="projects-track-wrapper">
-            <div class="projects-track" id="projects-track" tabindex="0" aria-label="Projects showcase carousel">
-
-              <!-- Placeholder Project 1: Residential -->
-              <article class="project-card">
-                <div class="project-card-header">
-                  <span class="project-sector-badge">Residential</span>
-                  <span class="project-status-pill">UAE Sector Scope</span>
-                </div>
-                <dl class="project-spec-ledger">
-                  <div class="project-spec-row">
-                    <dt>Electrical &amp; ELV</dt>
-                    <dd>MDB/SMDB Distribution, Lighting &amp; Smart Home Automation</dd>
+            <!-- Project Card 1: Residential -->
+            <article class="project-card" tabindex="0" data-project-id="residential">
+              <div class="project-card-image-wrap">
+                <div class="project-card-placeholder-bg sector-residential" aria-hidden="true">
+                  <div class="project-card-badge-top">
+                    <span class="project-sector-badge">Residential</span>
+                    <span class="project-status-pill">UAE Sector Scope</span>
                   </div>
-                  <div class="project-spec-row">
-                    <dt>HVAC &amp; Mechanical</dt>
-                    <dd>Chilled Water FCUs, Split Systems &amp; Insulated Ducting</dd>
-                  </div>
-                  <div class="project-spec-row">
-                    <dt>Plumbing</dt>
-                    <dd>PPR/HDPE Water Supply, Hot &amp; Cold Mixers &amp; Drainage</dd>
-                  </div>
-                </dl>
-                <div class="project-card-footer">
-                  <div>
-                    <h3>[Project Name — Residential Development]</h3>
-                    <p>Full MEP Design, Supply, Installation &amp; Commissioning</p>
-                  </div>
-                  <a href="#contact" class="card-corner-btn" aria-label="Request details for Residential project">
-                    <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M4 12L12 4M6 4h6v6"/>
+                  <div class="project-placeholder-art">
+                    <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 38V18L24 6l18 12v20H30V26H18v12H6z"/>
                     </svg>
-                  </a>
+                  </div>
                 </div>
-              </article>
+              </div>
 
-              <!-- Placeholder Project 2: Corporate -->
-              <article class="project-card">
-                <div class="project-card-header">
-                  <span class="project-sector-badge">Corporate</span>
-                  <span class="project-status-pill">UAE Sector Scope</span>
+              <div class="project-card-body">
+                <div class="project-card-text">
+                  <h3>Residential Development Project</h3>
+                  <p>Turnkey MEP engineering, high-durability distribution networks, and smart home automation.</p>
                 </div>
-                <dl class="project-spec-ledger">
-                  <div class="project-spec-row">
-                    <dt>Electrical &amp; ELV</dt>
-                    <dd>LV Switchgear, Structured LAN/Wi-Fi, CCTV &amp; Biometric Access</dd>
+
+                <div class="project-card-action">
+                  <span class="project-view-btn">
+                    <span>View Project</span>
+                    <span class="btn-icon-circle-sm" aria-hidden="true">
+                      <svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12L12 4M6 4h6v6"/>
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project Card 2: Corporate -->
+            <article class="project-card" tabindex="0" data-project-id="corporate">
+              <div class="project-card-image-wrap">
+                <div class="project-card-placeholder-bg sector-corporate" aria-hidden="true">
+                  <div class="project-card-badge-top">
+                    <span class="project-sector-badge">Corporate</span>
+                    <span class="project-status-pill">UAE Sector Scope</span>
                   </div>
-                  <div class="project-spec-row">
-                    <dt>HVAC &amp; Mechanical</dt>
-                    <dd>Central Chilled Water Plants, Air Handling &amp; Balancing</dd>
-                  </div>
-                  <div class="project-spec-row">
-                    <dt>Plumbing</dt>
-                    <dd>High-Rise Riser Manifolds, Sanitary Wares &amp; Sewage Lines</dd>
-                  </div>
-                </dl>
-                <div class="project-card-footer">
-                  <div>
-                    <h3>[Project Name — Corporate Commercial Tower]</h3>
-                    <p>Turnkey Commercial Fit-Out, Submittals &amp; Handover</p>
-                  </div>
-                  <a href="#contact" class="card-corner-btn" aria-label="Request details for Corporate project">
-                    <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M4 12L12 4M6 4h6v6"/>
+                  <div class="project-placeholder-art">
+                    <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="8" y="6" width="32" height="36" rx="2"/>
+                      <path d="M16 14h4M28 14h4M16 22h4M28 22h4M16 30h4M28 30h4M20 42v-6h8v6"/>
                     </svg>
-                  </a>
+                  </div>
                 </div>
-              </article>
+              </div>
 
-              <!-- Placeholder Project 3: Retail -->
-              <article class="project-card">
-                <div class="project-card-header">
-                  <span class="project-sector-badge">Retail</span>
-                  <span class="project-status-pill">UAE Sector Scope</span>
+              <div class="project-card-body">
+                <div class="project-card-text">
+                  <h3>Corporate Commercial Tower</h3>
+                  <p>Turnkey commercial fit-out, submittals, and multi-zone climate control.</p>
                 </div>
-                <dl class="project-spec-ledger">
-                  <div class="project-spec-row">
-                    <dt>Electrical &amp; ELV</dt>
-                    <dd>Architectural &amp; Emergency Lighting, DBs, PA Audio &amp; CCTV</dd>
+
+                <div class="project-card-action">
+                  <span class="project-view-btn">
+                    <span>View Project</span>
+                    <span class="btn-icon-circle-sm" aria-hidden="true">
+                      <svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12L12 4M6 4h6v6"/>
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project Card 3: Retail -->
+            <article class="project-card" tabindex="0" data-project-id="retail">
+              <div class="project-card-image-wrap">
+                <div class="project-card-placeholder-bg sector-retail" aria-hidden="true">
+                  <div class="project-card-badge-top">
+                    <span class="project-sector-badge">Retail</span>
+                    <span class="project-status-pill">UAE Sector Scope</span>
                   </div>
-                  <div class="project-spec-row">
-                    <dt>HVAC &amp; Mechanical</dt>
-                    <dd>Package Rooftop AC Units, FCUs &amp; Custom Air Ductwork</dd>
-                  </div>
-                  <div class="project-spec-row">
-                    <dt>Engineering</dt>
-                    <dd>Shop Drawings, Mall Authority Approvals &amp; Load Testing</dd>
-                  </div>
-                </dl>
-                <div class="project-card-footer">
-                  <div>
-                    <h3>[Project Name — Retail &amp; Showroom Fit-Out]</h3>
-                    <p>Fast-Track Retail MEP Execution &amp; Commissioning</p>
-                  </div>
-                  <a href="#contact" class="card-corner-btn" aria-label="Request details for Retail project">
-                    <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M4 12L12 4M6 4h6v6"/>
+                  <div class="project-placeholder-art">
+                    <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 14h36l-3 24H9L6 14z"/>
+                      <path d="M18 14V10a6 6 0 0 1 12 0v4"/>
                     </svg>
-                  </a>
+                  </div>
                 </div>
-              </article>
+              </div>
 
-              <!-- Placeholder Project 4: Hospitality -->
-              <article class="project-card">
-                <div class="project-card-header">
-                  <span class="project-sector-badge">Hospitality</span>
-                  <span class="project-status-pill">UAE Sector Scope</span>
+              <div class="project-card-body">
+                <div class="project-card-text">
+                  <h3>Retail &amp; Showroom Complex</h3>
+                  <p>Fast-track mall authority approvals, architectural lighting, and package AC units.</p>
                 </div>
-                <dl class="project-spec-ledger">
-                  <div class="project-spec-row">
-                    <dt>Electrical &amp; ELV</dt>
-                    <dd>Guestroom Smart Controls, EPABX Intercom &amp; AV Systems</dd>
+
+                <div class="project-card-action">
+                  <span class="project-view-btn">
+                    <span>View Project</span>
+                    <span class="btn-icon-circle-sm" aria-hidden="true">
+                      <svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12L12 4M6 4h6v6"/>
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project Card 4: Hospitality -->
+            <article class="project-card" tabindex="0" data-project-id="hospitality">
+              <div class="project-card-image-wrap">
+                <div class="project-card-placeholder-bg sector-hospitality" aria-hidden="true">
+                  <div class="project-card-badge-top">
+                    <span class="project-sector-badge">Hospitality</span>
+                    <span class="project-status-pill">UAE Sector Scope</span>
                   </div>
-                  <div class="project-spec-row">
-                    <dt>HVAC &amp; Mechanical</dt>
-                    <dd>Low-Noise Chilled Water FCUs &amp; Fresh Air Duct Networks</dd>
-                  </div>
-                  <div class="project-spec-row">
-                    <dt>Plumbing</dt>
-                    <dd>Temperature-Controlled Hot &amp; Cold Water &amp; Luxury Sanitary</dd>
-                  </div>
-                </dl>
-                <div class="project-card-footer">
-                  <div>
-                    <h3>[Project Name — Hospitality &amp; Hotel Suites]</h3>
-                    <p>Comprehensive MEP Systems &amp; Preventive Maintenance</p>
-                  </div>
-                  <a href="#contact" class="card-corner-btn" aria-label="Request details for Hospitality project">
-                    <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M4 12L12 4M6 4h6v6"/>
+                  <div class="project-placeholder-art">
+                    <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 38V12a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v26M30 20h10a2 2 0 0 1 2 2v16"/>
+                      <path d="M14 18h4M22 18h4M14 26h4M22 26h4M14 34h4M22 34h4"/>
                     </svg>
-                  </a>
+                  </div>
                 </div>
-              </article>
+              </div>
 
-              <!-- Placeholder Project 5: Healthcare -->
-              <article class="project-card">
-                <div class="project-card-header">
-                  <span class="project-sector-badge">Healthcare</span>
-                  <span class="project-status-pill">UAE Sector Scope</span>
+              <div class="project-card-body">
+                <div class="project-card-text">
+                  <h3>Hospitality &amp; Luxury Suites</h3>
+                  <p>Low-noise chilled water systems, smart room controls, and luxury plumbing fixtures.</p>
                 </div>
-                <dl class="project-spec-ledger">
-                  <div class="project-spec-row">
-                    <dt>Electrical &amp; ELV</dt>
-                    <dd>Essential LV Power Panels, Control Boards &amp; Nurse Call ELV</dd>
+
+                <div class="project-card-action">
+                  <span class="project-view-btn">
+                    <span>View Project</span>
+                    <span class="btn-icon-circle-sm" aria-hidden="true">
+                      <svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12L12 4M6 4h6v6"/>
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project Card 5: Healthcare -->
+            <article class="project-card" tabindex="0" data-project-id="healthcare">
+              <div class="project-card-image-wrap">
+                <div class="project-card-placeholder-bg sector-healthcare" aria-hidden="true">
+                  <div class="project-card-badge-top">
+                    <span class="project-sector-badge">Healthcare</span>
+                    <span class="project-status-pill">UAE Sector Scope</span>
                   </div>
-                  <div class="project-spec-row">
-                    <dt>HVAC &amp; Mechanical</dt>
-                    <dd>Hygienic Insulated Ducting &amp; Chilled Water Circulation</dd>
-                  </div>
-                  <div class="project-spec-row">
-                    <dt>Plumbing</dt>
-                    <dd>Copper, HDPE &amp; uPVC Piping &amp; Specialized Drainage</dd>
-                  </div>
-                </dl>
-                <div class="project-card-footer">
-                  <div>
-                    <h3>[Project Name — Healthcare &amp; Medical Center]</h3>
-                    <p>Code-Compliant Clinical MEP Infrastructure &amp; Testing</p>
-                  </div>
-                  <a href="#contact" class="card-corner-btn" aria-label="Request details for Healthcare project">
-                    <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M4 12L12 4M6 4h6v6"/>
+                  <div class="project-placeholder-art">
+                    <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="8" y="8" width="32" height="32" rx="4"/>
+                      <path d="M24 16v16M16 24h16"/>
                     </svg>
-                  </a>
+                  </div>
                 </div>
-              </article>
+              </div>
 
-              <!-- Placeholder Project 6: Education -->
-              <article class="project-card">
-                <div class="project-card-header">
-                  <span class="project-sector-badge">Education</span>
-                  <span class="project-status-pill">UAE Sector Scope</span>
+              <div class="project-card-body">
+                <div class="project-card-text">
+                  <h3>Healthcare &amp; Clinic Facility</h3>
+                  <p>Hygienic ventilation, essential LV standby power, and medical-grade drainage lines.</p>
                 </div>
-                <dl class="project-spec-ledger">
-                  <div class="project-spec-row">
-                    <dt>Electrical &amp; ELV</dt>
-                    <dd>Outdoor Feeder Pillars, Campus Data Cabling &amp; PA Audio</dd>
+
+                <div class="project-card-action">
+                  <span class="project-view-btn">
+                    <span>View Project</span>
+                    <span class="btn-icon-circle-sm" aria-hidden="true">
+                      <svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12L12 4M6 4h6v6"/>
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project Card 6: Education -->
+            <article class="project-card" tabindex="0" data-project-id="education">
+              <div class="project-card-image-wrap">
+                <div class="project-card-placeholder-bg sector-education" aria-hidden="true">
+                  <div class="project-card-badge-top">
+                    <span class="project-sector-badge">Education</span>
+                    <span class="project-status-pill">UAE Sector Scope</span>
                   </div>
-                  <div class="project-spec-row">
-                    <dt>HVAC &amp; Mechanical</dt>
-                    <dd>Central Chilled Water Plant &amp; Classroom AC Distribution</dd>
-                  </div>
-                  <div class="project-spec-row">
-                    <dt>Plumbing</dt>
-                    <dd>High-Capacity Water Supply Manifolds &amp; Sanitary Blocks</dd>
-                  </div>
-                </dl>
-                <div class="project-card-footer">
-                  <div>
-                    <h3>[Project Name — Educational Campus Facility]</h3>
-                    <p>End-to-End Institutional MEP Delivery &amp; Handover</p>
-                  </div>
-                  <a href="#contact" class="card-corner-btn" aria-label="Request details for Education project">
-                    <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M4 12L12 4M6 4h6v6"/>
+                  <div class="project-placeholder-art">
+                    <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M24 8L4 18l20 10 20-10L24 8z"/>
+                      <path d="M10 21v14c0 4 6 7 14 7s14-3 14-7V21"/>
+                      <path d="M40 20v14"/>
                     </svg>
-                  </a>
+                  </div>
                 </div>
-              </article>
+              </div>
 
-            </div>
+              <div class="project-card-body">
+                <div class="project-card-text">
+                  <h3>Educational Campus Facility</h3>
+                  <p>Campus structured cabling, central cooling plants, and high-capacity water networks.</p>
+                </div>
+
+                <div class="project-card-action">
+                  <span class="project-view-btn">
+                    <span>View Project</span>
+                    <span class="btn-icon-circle-sm" aria-hidden="true">
+                      <svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12L12 4M6 4h6v6"/>
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </article>
+
           </div>
         </div>
       </div>
     </section>
 
     <!-- 6. Contact Us Section -->
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section" data-theme="light">
       <div class="container">
         <!-- BAU CARGO bottom conversion banner with 8th unique photo: guy shaking hands.png -->
         <div class="contact-cta-banner pattern-indigo">
@@ -869,39 +920,99 @@
   </a>
 
   <!-- 8. Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand-col">
-        <a href="#top" class="footer-logo-link" aria-label="HYBRID Electro Mechanical L.L.C Home">
-          <img src="assets/logo-hybrid.png" alt="HYBRID Electro Mechanical L.L.C" class="footer-logo" width="160" height="38" loading="lazy">
-        </a>
-        <p class="footer-tagline">Engineering Excellence. Delivering Reliability across the UAE.</p>
+  <footer class="site-footer" data-theme="light">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand-col">
+          <a href="#top" class="footer-logo-link" aria-label="HYBRID Electro Mechanical L.L.C Home">
+            <img src="assets/logo-hybrid.png" alt="HYBRID Electro Mechanical L.L.C" class="footer-logo" width="160" height="38" loading="lazy">
+          </a>
+          <p class="footer-tagline">Engineering Excellence. Delivering Reliability across the UAE.</p>
+        </div>
+
+        <nav class="footer-col" aria-labelledby="footer-explore-title">
+          <h2 id="footer-explore-title" class="footer-col-title">Explore</h2>
+          <ul class="footer-list">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#stats">Track Record</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col">
+          <h2 class="footer-col-title">Services</h2>
+          <ul class="footer-list">
+            <li><a href="#services">Electrical Services</a></li>
+            <li><a href="#services">Low Current Systems</a></li>
+            <li><a href="#services">Plumbing Services</a></li>
+            <li><a href="#services">HVAC Services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2 class="footer-col-title">Contact</h2>
+          <ul class="footer-list footer-contact-list">
+            <li><a href="tel:+97142564036">+971 4 256 4036</a></li>
+            <li><a href="mailto:info@hybridelectrouae.com">info@hybridelectrouae.com</a></li>
+            <li><a href="https://www.hybridelectrouae.com" target="_blank" rel="noopener noreferrer">www.hybridelectrouae.com</a></li>
+            <li class="footer-address">P.O.Box : 8937, Dubai - UAE</li>
+          </ul>
+        </div>
       </div>
 
-      <nav class="footer-nav" aria-label="Footer Quick Links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#stats">Track Record</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="footer-contact-col">
-        <a href="tel:+97142564036" class="footer-contact-link">+971 4 256 4036</a>
-        <a href="mailto:info@hybridelectrouae.com" class="footer-contact-link">info@hybridelectrouae.com</a>
-        <span class="footer-address">P.O.Box : 8937, Dubai - UAE</span>
-      </div>
-
-      <div class="footer-meta-col">
+      <div class="footer-bottom">
         <p class="footer-copy">&copy; 2026 HYBRID Electro Mechanical L.L.C. All rights reserved.</p>
-        <a href="#top" class="back-to-top-btn" aria-label="Scroll back to top">
-          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M8 13V3M4 7l4-4 4 4"/>
-          </svg>
+        <a href="#top" class="back-to-top-link">
+          <span>Back to top</span>
+          <span class="back-to-top-btn" aria-hidden="true">
+            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 13V3M4 7l4-4 4 4"/>
+            </svg>
+          </span>
         </a>
       </div>
     </div>
   </footer>
+
+  <!-- Project Details Modal Popup -->
+  <div class="project-modal-backdrop" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
+    <div class="project-modal-box">
+      <button type="button" class="project-modal-close" id="modal-close-btn" aria-label="Close project details popup">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <div class="project-modal-header">
+        <div class="project-modal-badge-row">
+          <span class="project-sector-badge" id="modal-sector-badge">Sector</span>
+          <span class="project-status-pill" id="modal-status-badge">Turnkey Execution</span>
+        </div>
+        <h3 id="modal-project-title" class="project-modal-title">Project Title</h3>
+        <p id="modal-project-summary" class="project-modal-summary">Project Summary Overview</p>
+      </div>
+
+      <div class="project-modal-body">
+        <div class="modal-section-title">Detailed MEP Engineering Scope</div>
+        <dl class="modal-specs-list" id="modal-specs-list">
+          <!-- Dynamically populated or updated with project scope details -->
+        </dl>
+      </div>
+
+      <div class="project-modal-footer">
+        <a href="#contact" class="btn-pill btn-pill-dark" id="modal-inquire-btn">
+          <span>Inquire About Similar Project</span>
+          <span class="btn-icon-circle" aria-hidden="true">
+            <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 12L12 4M6 4h6v6"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
