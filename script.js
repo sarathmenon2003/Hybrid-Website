@@ -47,18 +47,104 @@
     });
   }
 
-  // 2. Service Division Cards Touch / Click Toggle
-  const serviceCards = document.querySelectorAll('.service-cutout-card');
-  serviceCards.forEach((card) => {
+  // 2. Services Carousel Autoscroll Controls & Interactive Cards
+  const servicesViewport = document.getElementById('services-carousel');
+  const servicesTrack = document.getElementById('services-carousel-track');
+  const servicesPauseBtn = document.getElementById('services-pause-btn');
+
+  // For ultra-wide displays (>= 1800px), clone an extra track group so the seamless loop never runs out of cards
+  if (servicesTrack && window.innerWidth >= 1800) {
+    const firstGroup = servicesTrack.querySelector('.services-track-group');
+    if (firstGroup) {
+      const extraClone = firstGroup.cloneNode(true);
+      extraClone.setAttribute('aria-hidden', 'true');
+      extraClone.querySelectorAll('a, button, article').forEach((el) => el.setAttribute('tabindex', '-1'));
+      servicesTrack.appendChild(extraClone);
+    }
+  }
+
+  const allServiceCards = document.querySelectorAll('.service-cutout-card');
+
+  const syncCarouselPause = () => {
+    if (!servicesViewport) return;
+    const hasExpanded = Boolean(servicesViewport.querySelector('.service-cutout-card.is-expanded'));
+    if (hasExpanded) {
+      servicesViewport.classList.add('is-paused');
+    } else if (!servicesPauseBtn || servicesPauseBtn.getAttribute('aria-pressed') !== 'true') {
+      servicesViewport.classList.remove('is-paused');
+    }
+  };
+
+  allServiceCards.forEach((card) => {
     card.addEventListener('click', (e) => {
-      if (e.target.closest('a')) return;
+      if (e.target.closest('a') || e.target.closest('button')) return;
       const wasExpanded = card.classList.contains('is-expanded');
-      serviceCards.forEach((c) => c.classList.remove('is-expanded'));
+      allServiceCards.forEach((c) => c.classList.remove('is-expanded'));
       if (!wasExpanded) {
         card.classList.add('is-expanded');
       }
+      syncCarouselPause();
+    });
+
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        if (e.target.closest('a')) return;
+        e.preventDefault();
+        const wasExpanded = card.classList.contains('is-expanded');
+        allServiceCards.forEach((c) => c.classList.remove('is-expanded'));
+        if (!wasExpanded) {
+          card.classList.add('is-expanded');
+        }
+        syncCarouselPause();
+      }
     });
   });
+
+  // Pause / Resume Button
+  if (servicesPauseBtn && servicesViewport) {
+    const pauseIcon = servicesPauseBtn.querySelector('.pause-icon');
+    const playIcon = servicesPauseBtn.querySelector('.play-icon');
+    const btnText = servicesPauseBtn.querySelector('.pause-btn-text');
+
+    servicesPauseBtn.addEventListener('click', () => {
+      const isCurrentlyPressed = servicesPauseBtn.getAttribute('aria-pressed') === 'true';
+      const willPause = !isCurrentlyPressed;
+
+      servicesPauseBtn.setAttribute('aria-pressed', String(willPause));
+      servicesViewport.classList.toggle('is-paused', willPause);
+
+      if (willPause) {
+        if (pauseIcon) pauseIcon.style.display = 'none';
+        if (playIcon) playIcon.style.display = 'inline-flex';
+        if (btnText) btnText.textContent = 'Resume';
+        servicesPauseBtn.setAttribute('aria-label', 'Resume autoscrolling services carousel');
+      } else {
+        if (pauseIcon) pauseIcon.style.display = 'inline-flex';
+        if (playIcon) playIcon.style.display = 'none';
+        if (btnText) btnText.textContent = 'Pause';
+        servicesPauseBtn.setAttribute('aria-label', 'Pause autoscrolling services carousel');
+        allServiceCards.forEach((c) => c.classList.remove('is-expanded'));
+      }
+    });
+  }
+
+  // Mobile Touch Pause Handler
+  if (servicesViewport) {
+    servicesViewport.addEventListener('touchstart', () => {
+      servicesViewport.classList.add('is-touch-paused');
+    }, { passive: true });
+
+    servicesViewport.addEventListener('touchend', () => {
+      setTimeout(() => {
+        if (
+          !servicesViewport.querySelector('.service-cutout-card.is-expanded') &&
+          (!servicesPauseBtn || servicesPauseBtn.getAttribute('aria-pressed') !== 'true')
+        ) {
+          servicesViewport.classList.remove('is-touch-paused');
+        }
+      }, 1600);
+    }, { passive: true });
+  }
 
   // 3. Turnkey MEP Execution Lifecycle Filter Pills
   const cycleTabs = document.querySelectorAll('.cycle-tab');

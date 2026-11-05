@@ -204,235 +204,477 @@
     <section id="services" class="services-section pattern-surface" data-theme="blue">
       <div class="container">
         <div class="section-header-row">
-          <h2>Our Services</h2>
-          <a href="#contact" class="inline-arrow-link">
-            <span>Request Technical Submittal</span>
-            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M4 12L12 4M6 4h6v6"/>
-            </svg>
-          </a>
+          <div>
+            <h2>Our Services</h2>
+          </div>
+          <div class="services-header-actions">
+            <button
+              type="button"
+              class="carousel-pause-btn"
+              id="services-pause-btn"
+              aria-label="Pause autoscrolling services carousel"
+              aria-pressed="false"
+              title="Pause / Resume autoscroll"
+            >
+              <span class="pause-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <rect x="6" y="4" width="4" height="16" rx="1"/>
+                  <rect x="14" y="4" width="4" height="16" rx="1"/>
+                </svg>
+              </span>
+              <span class="play-icon" aria-hidden="true" style="display: none;">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <polygon points="6 4 18 12 6 20 6 4"/>
+                </svg>
+              </span>
+              <span class="pause-btn-text">Pause</span>
+            </button>
+            <a href="#contact" class="inline-arrow-link">
+              <span>Request Technical Submittal</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 12L12 4M6 4h6v6"/>
+              </svg>
+            </a>
+          </div>
         </div>
 
-        <div class="services-bento-grid">
-          <!-- Row 1: Electrical & Low Current -->
-          <div class="services-bento-row">
-            <!-- Service Card 1: Electrical -->
-            <article class="service-cutout-card" tabindex="0">
-              <div class="service-card-top">
-                <div class="service-card-body">
-                  <div class="service-title-row">
-                    <span class="service-icon-box" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                      </svg>
-                    </span>
-                    <h3>Electrical Services</h3>
-                  </div>
-                  <p class="service-summary">
-                    Safe, code-compliant Low Voltage power distribution, switchgear assembly, and lighting infrastructure.
-                  </p>
+        <div class="services-carousel-viewport" id="services-carousel" aria-label="Our services carousel">
+          <div class="services-carousel-track" id="services-carousel-track">
+            <!-- Primary Services Track Group -->
+            <div class="services-track-group">
+              <!-- Service Card 1: Electrical -->
+              <article class="service-cutout-card" tabindex="0">
+                <div class="service-card-top">
+                  <div class="service-card-body">
+                    <div class="service-title-row">
+                      <span class="service-icon-box" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                      </span>
+                      <h3>Electrical Services</h3>
+                    </div>
+                    <p class="service-summary">
+                      Safe, code-compliant Low Voltage power distribution, switchgear assembly, and lighting infrastructure.
+                    </p>
 
-                  <div class="service-expand-drawer">
-                    <div class="service-expand-inner">
-                      <p class="service-deep-copy">
-                        Turnkey DEWA and authority-compliant electrical execution—from load schedules, voltage-drop calculations, and shop drawings to panel termination, live testing, and final commissioning.
-                      </p>
-                      <ul class="service-scope-list">
-                        <li><strong>LV Switchgear (MDB / SMDB / DB):</strong> Installation, testing, commissioning &amp; panel upgrading</li>
-                        <li><strong>Power Distribution:</strong> Main feeder cabling, sub-main circuits &amp; heavy machinery wiring</li>
-                        <li><strong>Control &amp; Automation Panels:</strong> Custom assembly, internal wiring &amp; motor control centers</li>
-                        <li><strong>Lighting &amp; Feeder Pillars:</strong> Interior, architectural façade, emergency &amp; outdoor enclosures</li>
-                      </ul>
+                    <div class="service-expand-drawer">
+                      <div class="service-expand-inner">
+                        <p class="service-deep-copy">
+                          Turnkey DEWA and authority-compliant electrical execution—from load schedules, voltage-drop calculations, and shop drawings to panel termination, live testing, and final commissioning.
+                        </p>
+                        <ul class="service-scope-list">
+                          <li><strong>LV Switchgear (MDB / SMDB / DB):</strong> Installation, testing, commissioning &amp; panel upgrading</li>
+                          <li><strong>Power Distribution:</strong> Main feeder cabling, sub-main circuits &amp; heavy machinery wiring</li>
+                          <li><strong>Control &amp; Automation Panels:</strong> Custom assembly, internal wiring &amp; motor control centers</li>
+                          <li><strong>Lighting &amp; Feeder Pillars:</strong> Interior, architectural façade, emergency &amp; outdoor enclosures</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div class="service-card-footer">
-                  <a href="#contact" class="card-corner-btn" aria-label="Inquire about Electrical Services">
-                    <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M4 12L12 4M6 4h6v6"/>
-                    </svg>
-                  </a>
-                  <span class="service-expand-label">Explore Scope</span>
-                </div>
-              </div>
-
-              <div class="service-card-visual">
-                <img
-                  src="assets/service-electrical-cutout.png"
-                  alt="HYBRID technicians on ladders servicing low-voltage electrical distribution boards and control panels"
-                  class="service-cutout-photo"
-                  width="1200"
-                  height="1061"
-                  loading="lazy"
-                >
-              </div>
-            </article>
-
-            <!-- Service Card 2: Low Current -->
-            <article class="service-cutout-card" tabindex="0">
-              <div class="service-card-top">
-                <div class="service-card-body">
-                  <div class="service-title-row">
-                    <span class="service-icon-box" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
-                        <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
-                        <line x1="6" y1="6" x2="6.01" y2="6"/>
-                        <line x1="6" y1="18" x2="6.01" y2="18"/>
+                  <div class="service-card-footer">
+                    <a href="#contact" class="card-corner-btn" aria-label="Inquire about Electrical Services">
+                      <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12L12 4M6 4h6v6"/>
                       </svg>
-                    </span>
-                    <h3>Low Current Systems</h3>
+                    </a>
+                    <span class="service-expand-label">Explore Scope</span>
                   </div>
-                  <p class="service-summary">
-                    Structured data cabling, enterprise security monitoring, and intelligent building automation networks.
-                  </p>
+                </div>
 
-                  <div class="service-expand-drawer">
-                    <div class="service-expand-inner">
-                      <p class="service-deep-copy">
-                        Integrated ELV and smart-building infrastructure engineered for high-availability commercial towers, hospitality venues, retail spaces, and modern residential developments.
-                      </p>
-                      <ul class="service-scope-list">
-                        <li><strong>Data &amp; Network Infrastructure:</strong> Structured Cat6A/Fiber cabling, LAN, Wi-Fi &amp; server racks</li>
-                        <li><strong>CCTV &amp; Access Control:</strong> IP surveillance monitoring, biometric readers &amp; gate barriers</li>
-                        <li><strong>Telecom &amp; Audio-Visual:</strong> Intercom, EPABX voice networks, PA systems &amp; conference AV</li>
-                        <li><strong>Smart Home Automation:</strong> Centralized control for lighting scenes, HVAC, shading &amp; security</li>
-                      </ul>
+                <div class="service-card-visual">
+                  <img
+                    src="assets/service-electrical-cutout.png"
+                    alt="HYBRID technicians on ladders servicing low-voltage electrical distribution boards and control panels"
+                    class="service-cutout-photo"
+                    width="1200"
+                    height="1061"
+                    loading="lazy"
+                  >
+                </div>
+              </article>
+
+              <!-- Service Card 2: Low Current -->
+              <article class="service-cutout-card" tabindex="0">
+                <div class="service-card-top">
+                  <div class="service-card-body">
+                    <div class="service-title-row">
+                      <span class="service-icon-box" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                          <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                          <line x1="6" y1="6" x2="6.01" y2="6"/>
+                          <line x1="6" y1="18" x2="6.01" y2="18"/>
+                        </svg>
+                      </span>
+                      <h3>Low Current Systems</h3>
+                    </div>
+                    <p class="service-summary">
+                      Structured data cabling, enterprise security monitoring, and intelligent building automation networks.
+                    </p>
+
+                    <div class="service-expand-drawer">
+                      <div class="service-expand-inner">
+                        <p class="service-deep-copy">
+                          Integrated ELV and smart-building infrastructure engineered for high-availability commercial towers, hospitality venues, retail spaces, and modern residential developments.
+                        </p>
+                        <ul class="service-scope-list">
+                          <li><strong>Data &amp; Network Infrastructure:</strong> Structured Cat6A/Fiber cabling, LAN, Wi-Fi &amp; server racks</li>
+                          <li><strong>CCTV &amp; Access Control:</strong> IP surveillance monitoring, biometric readers &amp; gate barriers</li>
+                          <li><strong>Telecom &amp; Audio-Visual:</strong> Intercom, EPABX voice networks, PA systems &amp; conference AV</li>
+                          <li><strong>Smart Home Automation:</strong> Centralized control for lighting scenes, HVAC, shading &amp; security</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div class="service-card-footer">
-                  <a href="#contact" class="card-corner-btn" aria-label="Inquire about Low Current Systems">
-                    <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M4 12L12 4M6 4h6v6"/>
-                    </svg>
-                  </a>
-                  <span class="service-expand-label">Explore Scope</span>
-                </div>
-              </div>
-
-              <div class="service-card-visual">
-                <img
-                  src="assets/service-lowcurrent-cutout.png"
-                  alt="HYBRID installation crew routing structured cabling across server racks"
-                  class="service-cutout-photo"
-                  width="915"
-                  height="804"
-                  loading="lazy"
-                >
-              </div>
-            </article>
-          </div>
-
-          <!-- Row 2: Plumbing & HVAC -->
-          <div class="services-bento-row">
-            <!-- Service Card 3: Plumbing -->
-            <article class="service-cutout-card" tabindex="0">
-              <div class="service-card-top">
-                <div class="service-card-body">
-                  <div class="service-title-row">
-                    <span class="service-icon-box" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                  <div class="service-card-footer">
+                    <a href="#contact" class="card-corner-btn" aria-label="Inquire about Low Current Systems">
+                      <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12L12 4M6 4h6v6"/>
                       </svg>
-                    </span>
-                    <h3>Plumbing Services</h3>
+                    </a>
+                    <span class="service-expand-label">Explore Scope</span>
                   </div>
-                  <p class="service-summary">
-                    High-durability water supply manifolds, temperature-controlled pipelines, and drainage networks.
-                  </p>
+                </div>
 
-                  <div class="service-expand-drawer">
-                    <div class="service-expand-inner">
-                      <p class="service-deep-copy">
-                        Complete hydraulic piping, booster pump stations, and sanitary drainage systems pressure-tested and coordinated against multi-discipline MEP clashes for leak-free longevity.
-                      </p>
-                      <ul class="service-scope-list">
-                        <li><strong>Water Supply Piping:</strong> High-pressure HDPE, PPR, Copper, uPVC &amp; Mild Steel (MS) networks</li>
-                        <li><strong>Hot &amp; Cold Water Systems:</strong> Insulated circulation risers, central heaters &amp; mixing valves</li>
-                        <li><strong>Drainage &amp; Sewage Lines:</strong> Gravity waste, soil, vent &amp; storm-water discharge pipelines</li>
-                        <li><strong>Sanitary Ware Fit-Out:</strong> Commercial and luxury residential bathroom &amp; fixture installation</li>
-                      </ul>
+                <div class="service-card-visual">
+                  <img
+                    src="assets/service-lowcurrent-cutout.png"
+                    alt="HYBRID installation crew routing structured cabling across server racks"
+                    class="service-cutout-photo"
+                    width="915"
+                    height="804"
+                    loading="lazy"
+                  >
+                </div>
+              </article>
+
+              <!-- Service Card 3: Plumbing -->
+              <article class="service-cutout-card" tabindex="0">
+                <div class="service-card-top">
+                  <div class="service-card-body">
+                    <div class="service-title-row">
+                      <span class="service-icon-box" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                        </svg>
+                      </span>
+                      <h3>Plumbing Services</h3>
+                    </div>
+                    <p class="service-summary">
+                      High-durability water supply manifolds, temperature-controlled pipelines, and drainage networks.
+                    </p>
+
+                    <div class="service-expand-drawer">
+                      <div class="service-expand-inner">
+                        <p class="service-deep-copy">
+                          Complete hydraulic piping, booster pump stations, and sanitary drainage systems pressure-tested and coordinated against multi-discipline MEP clashes for leak-free longevity.
+                        </p>
+                        <ul class="service-scope-list">
+                          <li><strong>Water Supply Piping:</strong> High-pressure HDPE, PPR, Copper, uPVC &amp; Mild Steel (MS) networks</li>
+                          <li><strong>Hot &amp; Cold Water Systems:</strong> Insulated circulation risers, central heaters &amp; mixing valves</li>
+                          <li><strong>Drainage &amp; Sewage Lines:</strong> Gravity waste, soil, vent &amp; storm-water discharge pipelines</li>
+                          <li><strong>Sanitary Ware Fit-Out:</strong> Commercial and luxury residential bathroom &amp; fixture installation</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div class="service-card-footer">
-                  <a href="#contact" class="card-corner-btn" aria-label="Inquire about Plumbing Services">
-                    <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M4 12L12 4M6 4h6v6"/>
-                    </svg>
-                  </a>
-                  <span class="service-expand-label">Explore Scope</span>
-                </div>
-              </div>
-
-              <div class="service-card-visual">
-                <img
-                  src="assets/service-plumbing-cutout.png"
-                  alt="HYBRID plumbing technicians assembling a multi-line green pipe manifold"
-                  class="service-cutout-photo"
-                  width="745"
-                  height="1200"
-                  loading="lazy"
-                >
-              </div>
-            </article>
-
-            <!-- Service Card 4: HVAC -->
-            <article class="service-cutout-card" tabindex="0">
-              <div class="service-card-top">
-                <div class="service-card-body">
-                  <div class="service-title-row">
-                    <span class="service-icon-box" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/>
+                  <div class="service-card-footer">
+                    <a href="#contact" class="card-corner-btn" aria-label="Inquire about Plumbing Services">
+                      <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12L12 4M6 4h6v6"/>
                       </svg>
-                    </span>
-                    <h3>HVAC Services</h3>
+                    </a>
+                    <span class="service-expand-label">Explore Scope</span>
                   </div>
-                  <p class="service-summary">
-                    Central chilled-water plants, rooftop package units, and insulated air distribution ductwork.
-                  </p>
+                </div>
 
-                  <div class="service-expand-drawer">
-                    <div class="service-expand-inner">
-                      <p class="service-deep-copy">
-                        High-efficiency climate control and ventilation engineered for demanding UAE ambient temperatures, acoustic comfort, and balanced air distribution across every zone.
-                      </p>
-                      <ul class="service-scope-list">
-                        <li><strong>AC &amp; FCU Installations:</strong> Split units, rooftop package units &amp; chilled-water Fan Coil Units</li>
-                        <li><strong>Chilled Water Systems:</strong> Central chillers, circulation pumps, valves &amp; insulated risers</li>
-                        <li><strong>Ducting Fabrication:</strong> Custom GI/PI ducting, thermal insulation &amp; fire/volume dampers</li>
-                        <li><strong>Air Balancing &amp; Commissioning:</strong> Volumetric TAB testing, start-up &amp; preventive maintenance</li>
-                      </ul>
+                <div class="service-card-visual">
+                  <img
+                    src="assets/service-plumbing-cutout.png"
+                    alt="HYBRID plumbing technicians assembling a multi-line green pipe manifold"
+                    class="service-cutout-photo"
+                    width="745"
+                    height="1200"
+                    loading="lazy"
+                  >
+                </div>
+              </article>
+
+              <!-- Service Card 4: HVAC -->
+              <article class="service-cutout-card" tabindex="0">
+                <div class="service-card-top">
+                  <div class="service-card-body">
+                    <div class="service-title-row">
+                      <span class="service-icon-box" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/>
+                        </svg>
+                      </span>
+                      <h3>HVAC Services</h3>
+                    </div>
+                    <p class="service-summary">
+                      Central chilled-water plants, rooftop package units, and insulated air distribution ductwork.
+                    </p>
+
+                    <div class="service-expand-drawer">
+                      <div class="service-expand-inner">
+                        <p class="service-deep-copy">
+                          High-efficiency climate control and ventilation engineered for demanding UAE ambient temperatures, acoustic comfort, and balanced air distribution across every zone.
+                        </p>
+                        <ul class="service-scope-list">
+                          <li><strong>AC &amp; FCU Installations:</strong> Split units, rooftop package units &amp; chilled-water Fan Coil Units</li>
+                          <li><strong>Chilled Water Systems:</strong> Central chillers, circulation pumps, valves &amp; insulated risers</li>
+                          <li><strong>Ducting Fabrication:</strong> Custom GI/PI ducting, thermal insulation &amp; fire/volume dampers</li>
+                          <li><strong>Air Balancing &amp; Commissioning:</strong> Volumetric TAB testing, start-up &amp; preventive maintenance</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
+
+                  <div class="service-card-footer">
+                    <a href="#contact" class="card-corner-btn" aria-label="Inquire about HVAC Services">
+                      <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12L12 4M6 4h6v6"/>
+                      </svg>
+                    </a>
+                    <span class="service-expand-label">Explore Scope</span>
+                  </div>
                 </div>
 
-                <div class="service-card-footer">
-                  <a href="#contact" class="card-corner-btn" aria-label="Inquire about HVAC Services">
-                    <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M4 12L12 4M6 4h6v6"/>
-                    </svg>
-                  </a>
-                  <span class="service-expand-label">Explore Scope</span>
+                <div class="service-card-visual">
+                  <img
+                    src="assets/service-hvac-cutout.png"
+                    alt="HYBRID HVAC technicians servicing industrial rooftop chillers and ductwork"
+                    class="service-cutout-photo"
+                    width="1091"
+                    height="1199"
+                    loading="lazy"
+                  >
                 </div>
-              </div>
+              </article>
+            </div>
 
-              <div class="service-card-visual">
-                <img
-                  src="assets/service-hvac-cutout.png"
-                  alt="HYBRID HVAC technicians servicing industrial rooftop chillers and ductwork"
-                  class="service-cutout-photo"
-                  width="1091"
-                  height="1199"
-                  loading="lazy"
-                >
-              </div>
-            </article>
+            <!-- Cloned Services Track Group for Infinite Seamless Autoscroll -->
+            <div class="services-track-group" aria-hidden="true">
+              <!-- Cloned Card 1 -->
+              <article class="service-cutout-card" tabindex="-1">
+                <div class="service-card-top">
+                  <div class="service-card-body">
+                    <div class="service-title-row">
+                      <span class="service-icon-box" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                      </span>
+                      <h3>Electrical Services</h3>
+                    </div>
+                    <p class="service-summary">
+                      Safe, code-compliant Low Voltage power distribution, switchgear assembly, and lighting infrastructure.
+                    </p>
+
+                    <div class="service-expand-drawer">
+                      <div class="service-expand-inner">
+                        <p class="service-deep-copy">
+                          Turnkey DEWA and authority-compliant electrical execution—from load schedules, voltage-drop calculations, and shop drawings to panel termination, live testing, and final commissioning.
+                        </p>
+                        <ul class="service-scope-list">
+                          <li><strong>LV Switchgear (MDB / SMDB / DB):</strong> Installation, testing, commissioning &amp; panel upgrading</li>
+                          <li><strong>Power Distribution:</strong> Main feeder cabling, sub-main circuits &amp; heavy machinery wiring</li>
+                          <li><strong>Control &amp; Automation Panels:</strong> Custom assembly, internal wiring &amp; motor control centers</li>
+                          <li><strong>Lighting &amp; Feeder Pillars:</strong> Interior, architectural façade, emergency &amp; outdoor enclosures</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="service-card-footer">
+                    <a href="#contact" class="card-corner-btn" tabindex="-1" aria-label="Inquire about Electrical Services">
+                      <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12L12 4M6 4h6v6"/>
+                      </svg>
+                    </a>
+                    <span class="service-expand-label">Explore Scope</span>
+                  </div>
+                </div>
+
+                <div class="service-card-visual">
+                  <img
+                    src="assets/service-electrical-cutout.png"
+                    alt=""
+                    class="service-cutout-photo"
+                    width="1200"
+                    height="1061"
+                    loading="lazy"
+                  >
+                </div>
+              </article>
+
+              <!-- Cloned Card 2 -->
+              <article class="service-cutout-card" tabindex="-1">
+                <div class="service-card-top">
+                  <div class="service-card-body">
+                    <div class="service-title-row">
+                      <span class="service-icon-box" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                          <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                          <line x1="6" y1="6" x2="6.01" y2="6"/>
+                          <line x1="6" y1="18" x2="6.01" y2="18"/>
+                        </svg>
+                      </span>
+                      <h3>Low Current Systems</h3>
+                    </div>
+                    <p class="service-summary">
+                      Structured data cabling, enterprise security monitoring, and intelligent building automation networks.
+                    </p>
+
+                    <div class="service-expand-drawer">
+                      <div class="service-expand-inner">
+                        <p class="service-deep-copy">
+                          Integrated ELV and smart-building infrastructure engineered for high-availability commercial towers, hospitality venues, retail spaces, and modern residential developments.
+                        </p>
+                        <ul class="service-scope-list">
+                          <li><strong>Data &amp; Network Infrastructure:</strong> Structured Cat6A/Fiber cabling, LAN, Wi-Fi &amp; server racks</li>
+                          <li><strong>CCTV &amp; Access Control:</strong> IP surveillance monitoring, biometric readers &amp; gate barriers</li>
+                          <li><strong>Telecom &amp; Audio-Visual:</strong> Intercom, EPABX voice networks, PA systems &amp; conference AV</li>
+                          <li><strong>Smart Home Automation:</strong> Centralized control for lighting scenes, HVAC, shading &amp; security</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="service-card-footer">
+                    <a href="#contact" class="card-corner-btn" tabindex="-1" aria-label="Inquire about Low Current Systems">
+                      <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12L12 4M6 4h6v6"/>
+                      </svg>
+                    </a>
+                    <span class="service-expand-label">Explore Scope</span>
+                  </div>
+                </div>
+
+                <div class="service-card-visual">
+                  <img
+                    src="assets/service-lowcurrent-cutout.png"
+                    alt=""
+                    class="service-cutout-photo"
+                    width="915"
+                    height="804"
+                    loading="lazy"
+                  >
+                </div>
+              </article>
+
+              <!-- Cloned Card 3 -->
+              <article class="service-cutout-card" tabindex="-1">
+                <div class="service-card-top">
+                  <div class="service-card-body">
+                    <div class="service-title-row">
+                      <span class="service-icon-box" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                        </svg>
+                      </span>
+                      <h3>Plumbing Services</h3>
+                    </div>
+                    <p class="service-summary">
+                      High-durability water supply manifolds, temperature-controlled pipelines, and drainage networks.
+                    </p>
+
+                    <div class="service-expand-drawer">
+                      <div class="service-expand-inner">
+                        <p class="service-deep-copy">
+                          Complete hydraulic piping, booster pump stations, and sanitary drainage systems pressure-tested and coordinated against multi-discipline MEP clashes for leak-free longevity.
+                        </p>
+                        <ul class="service-scope-list">
+                          <li><strong>Water Supply Piping:</strong> High-pressure HDPE, PPR, Copper, uPVC &amp; Mild Steel (MS) networks</li>
+                          <li><strong>Hot &amp; Cold Water Systems:</strong> Insulated circulation risers, central heaters &amp; mixing valves</li>
+                          <li><strong>Drainage &amp; Sewage Lines:</strong> Gravity waste, soil, vent &amp; storm-water discharge pipelines</li>
+                          <li><strong>Sanitary Ware Fit-Out:</strong> Commercial and luxury residential bathroom &amp; fixture installation</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="service-card-footer">
+                    <a href="#contact" class="card-corner-btn" tabindex="-1" aria-label="Inquire about Plumbing Services">
+                      <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12L12 4M6 4h6v6"/>
+                      </svg>
+                    </a>
+                    <span class="service-expand-label">Explore Scope</span>
+                  </div>
+                </div>
+
+                <div class="service-card-visual">
+                  <img
+                    src="assets/service-plumbing-cutout.png"
+                    alt=""
+                    class="service-cutout-photo"
+                    width="745"
+                    height="1200"
+                    loading="lazy"
+                  >
+                </div>
+              </article>
+
+              <!-- Cloned Card 4 -->
+              <article class="service-cutout-card" tabindex="-1">
+                <div class="service-card-top">
+                  <div class="service-card-body">
+                    <div class="service-title-row">
+                      <span class="service-icon-box" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/>
+                        </svg>
+                      </span>
+                      <h3>HVAC Services</h3>
+                    </div>
+                    <p class="service-summary">
+                      Central chilled-water plants, rooftop package units, and insulated air distribution ductwork.
+                    </p>
+
+                    <div class="service-expand-drawer">
+                      <div class="service-expand-inner">
+                        <p class="service-deep-copy">
+                          High-efficiency climate control and ventilation engineered for demanding UAE ambient temperatures, acoustic comfort, and balanced air distribution across every zone.
+                        </p>
+                        <ul class="service-scope-list">
+                          <li><strong>AC &amp; FCU Installations:</strong> Split units, rooftop package units &amp; chilled-water Fan Coil Units</li>
+                          <li><strong>Chilled Water Systems:</strong> Central chillers, circulation pumps, valves &amp; insulated risers</li>
+                          <li><strong>Ducting Fabrication:</strong> Custom GI/PI ducting, thermal insulation &amp; fire/volume dampers</li>
+                          <li><strong>Air Balancing &amp; Commissioning:</strong> Volumetric TAB testing, start-up &amp; preventive maintenance</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="service-card-footer">
+                    <a href="#contact" class="card-corner-btn" tabindex="-1" aria-label="Inquire about HVAC Services">
+                      <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12L12 4M6 4h6v6"/>
+                      </svg>
+                    </a>
+                    <span class="service-expand-label">Explore Scope</span>
+                  </div>
+                </div>
+
+                <div class="service-card-visual">
+                  <img
+                    src="assets/service-hvac-cutout.png"
+                    alt=""
+                    class="service-cutout-photo"
+                    width="1091"
+                    height="1199"
+                    loading="lazy"
+                  >
+                </div>
+              </article>
+            </div>
           </div>
         </div>
 
