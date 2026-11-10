@@ -1,0 +1,39 @@
+---
+---
+
+<div class="project-modal-backdrop" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
+  <div class="project-modal-box">
+    <button type="button" class="project-modal-close" id="modal-close-btn" aria-label="Close project details popup">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <div class="project-modal-header">
+      <div class="project-modal-badge-row">
+        <span class="project-sector-badge" id="modal-sector-badge">Sector</span>
+        <span class="project-status-pill" id="modal-status-badge">Turnkey Execution</span>
+      </div>
+      <h3 id="modal-project-title" class="project-modal-title">Project Title</h3>
+      <p id="modal-project-summary" class="project-modal-summary">Project Summary Overview</p>
+    </div>
+
+    <div class="project-modal-body">
+      <div class="modal-section-title">Detailed MEP Engineering Scope</div>
+      <dl class="modal-specs-list" id="modal-specs-list">
+        <!-- Dynamically populated by client script with project scope details -->
+      </dl>
+    </div>
+
+    <div class="project-modal-footer">
+      <a href="#contact" class="btn-pill btn-pill-dark" id="modal-inquire-btn">
+        <span>Inquire About Similar Project</span>
+        <span class="btn-icon-circle" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12L12 4M6 4h6v6"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>

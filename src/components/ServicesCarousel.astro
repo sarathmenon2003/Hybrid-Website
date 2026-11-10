@@ -1,0 +1,212 @@
+---
+import { Image } from 'astro:assets';
+import ExecutionLifecycle from './ExecutionLifecycle.astro';
+import serviceElectrical from '../assets/service-electrical-cutout.png';
+import serviceLowCurrent from '../assets/service-lowcurrent-cutout.png';
+import servicePlumbing from '../assets/service-plumbing-cutout.png';
+import serviceHvac from '../assets/service-hvac-cutout.png';
+
+const services = [
+  {
+    id: 'electrical',
+    title: 'Electrical Services',
+    summary: 'Safe, code-compliant Low Voltage power distribution, switchgear assembly, and lighting infrastructure.',
+    deepCopy: 'Turnkey DEWA and authority-compliant electrical execution—from load schedules, voltage-drop calculations, and shop drawings to panel termination, live testing, and final commissioning.',
+    scope: [
+      { title: 'LV Switchgear (MDB / SMDB / DB):', desc: 'Installation, testing, commissioning & panel upgrading' },
+      { title: 'Power Distribution:', desc: 'Main feeder cabling, sub-main circuits & heavy machinery wiring' },
+      { title: 'Control & Automation Panels:', desc: 'Custom assembly, internal wiring & motor control centers' },
+      { title: 'Lighting & Feeder Pillars:', desc: 'Interior, architectural façade, emergency & outdoor enclosures' }
+    ],
+    image: serviceElectrical,
+    imageAlt: 'HYBRID technicians on ladders servicing low-voltage electrical distribution boards and control panels',
+    width: 1200,
+    height: 1061,
+    icon: 'electrical'
+  },
+  {
+    id: 'low-current',
+    title: 'Low Current Systems',
+    summary: 'Structured data cabling, enterprise security monitoring, and intelligent building automation networks.',
+    deepCopy: 'Integrated ELV and smart-building infrastructure engineered for high-availability commercial towers, hospitality venues, retail spaces, and modern residential developments.',
+    scope: [
+      { title: 'Data & Network Infrastructure:', desc: 'Structured Cat6A/Fiber cabling, LAN, Wi-Fi & server racks' },
+      { title: 'CCTV & Access Control:', desc: 'IP surveillance monitoring, biometric readers & gate barriers' },
+      { title: 'Telecom & Audio-Visual:', desc: 'Intercom, EPABX voice networks, PA systems & conference AV' },
+      { title: 'Smart Home Automation:', desc: 'Centralized control for lighting scenes, HVAC, shading & security' }
+    ],
+    image: serviceLowCurrent,
+    imageAlt: 'HYBRID engineer configuring low-current structured cabling, server racks, and data center patch panels',
+    width: 1200,
+    height: 1022,
+    icon: 'low-current'
+  },
+  {
+    id: 'plumbing',
+    title: 'Plumbing & Sanitary',
+    summary: 'Water supply piping, sanitary drainage networks, booster pumping stations, and rainwater systems.',
+    deepCopy: 'Comprehensive public health engineering adhering to Dubai Municipality and civil authority regulations—guaranteeing hydraulic integrity, leak prevention, and pressure stability.',
+    scope: [
+      { title: 'Piping & Distribution:', desc: 'High-grade PPR, PEX, and copper hot & cold water networks' },
+      { title: 'Drainage & Sewerage:', desc: 'Heavy-duty UPVC soil, waste, and rainwater drainage installations' },
+      { title: 'Pumping Stations:', desc: 'Water booster sets, transfer pumps, sump pits & submersible units' },
+      { title: 'Sanitary Ware & Heaters:', desc: 'Commercial fixtures, centralized water heaters & solar tie-ins' }
+    ],
+    image: servicePlumbing,
+    imageAlt: 'HYBRID plumbing team installing and testing green polypropylene water distribution manifolds and pressure valves',
+    width: 1200,
+    height: 1025,
+    icon: 'plumbing'
+  },
+  {
+    id: 'hvac',
+    title: 'HVAC & Air Conditioning',
+    summary: 'Central chiller systems, precision ventilation, insulated duct fabrication, and energy-efficient cooling.',
+    deepCopy: 'Engineered thermal comfort and indoor air quality solutions designed specifically for Middle East ambient operating conditions, focusing on energy conservation and acoustic isolation.',
+    scope: [
+      { title: 'Cooling Systems:', desc: 'Chilled water FCUs, AHUs, DX split units & rooftop packaged units' },
+      { title: 'Ductwork Fabrication:', desc: 'GI/PI ductwork manufacturing, acoustic insulation & acoustic louvers' },
+      { title: 'Ventilation & Extract:', desc: 'Car park exhaust, smoke management, kitchen extract & ecology units' },
+      { title: 'Testing & Balancing (TAB):', desc: 'Complete air flow balancing, water hydronics & pressure testing' }
+    ],
+    image: serviceHvac,
+    imageAlt: 'HYBRID HVAC technicians inspecting and servicing industrial rooftop air handling units and chiller coils',
+    width: 1091,
+    height: 1199,
+    icon: 'hvac'
+  }
+];
+---
+
+<section id="services" class="services-section pattern-surface" data-theme="blue">
+  <div class="container">
+    <div class="section-header-row">
+      <div>
+        <h2>Our Services</h2>
+      </div>
+      <div class="services-header-actions">
+        <button
+          type="button"
+          class="carousel-pause-btn"
+          id="services-pause-btn"
+          aria-label="Pause autoscrolling services carousel"
+          aria-pressed="false"
+          title="Pause / Resume autoscroll"
+        >
+          <span class="pause-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+              <rect x="6" y="4" width="4" height="16" rx="1"/>
+              <rect x="14" y="4" width="4" height="16" rx="1"/>
+            </svg>
+          </span>
+          <span class="play-icon" aria-hidden="true" style="display: none;">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+              <polygon points="6 4 18 12 6 20 6 4"/>
+            </svg>
+          </span>
+          <span class="pause-btn-text">Pause</span>
+        </button>
+        <a href="#contact" class="inline-arrow-link">
+          <span>Request Technical Submittal</span>
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 12L12 4M6 4h6v6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="services-carousel-viewport" id="services-carousel" aria-label="Our services carousel">
+      <div class="services-carousel-track" id="services-carousel-track">
+        {/* Track Group 1 (Primary) and Track Group 2 (Infinite Loop Clone) */}
+        {[1, 2].map((groupIndex) => (
+          <div
+            class="services-track-group"
+            aria-hidden={groupIndex === 2 ? "true" : undefined}
+          >
+            {services.map((svc) => (
+              <article
+                class="service-cutout-card"
+                tabindex={groupIndex === 2 ? "-1" : "0"}
+              >
+                <div class="service-card-top">
+                  <div class="service-card-body">
+                    <div class="service-title-row">
+                      <span class="service-icon-box" aria-hidden="true">
+                        {svc.icon === 'electrical' && (
+                          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                          </svg>
+                        )}
+                        {svc.icon === 'low-current' && (
+                          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                            <line x1="6" y1="6" x2="6.01" y2="6"/>
+                            <line x1="6" y1="18" x2="6.01" y2="18"/>
+                          </svg>
+                        )}
+                        {svc.icon === 'plumbing' && (
+                          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v6m0 0l-3 3m3-3l3 3M6 14a6 6 0 0 0 12 0c0-4-6-10-6-10s-6 6-6 10z"/>
+                          </svg>
+                        )}
+                        {svc.icon === 'hvac' && (
+                          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/>
+                          </svg>
+                        )}
+                      </span>
+                      <h3>{svc.title}</h3>
+                    </div>
+                    <p class="service-summary">{svc.summary}</p>
+
+                    <div class="service-expand-drawer">
+                      <div class="service-expand-inner">
+                        <p class="service-deep-copy">{svc.deepCopy}</p>
+                        <ul class="service-scope-list">
+                          {svc.scope.map((item) => (
+                            <li>
+                              <strong>{item.title}</strong> {item.desc}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="service-card-footer">
+                    <a
+                      href="#contact"
+                      class="card-corner-btn"
+                      aria-label={`Inquire about ${svc.title}`}
+                      tabindex={groupIndex === 2 ? "-1" : undefined}
+                    >
+                      <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12L12 4M6 4h6v6"/>
+                      </svg>
+                    </a>
+                    <span class="service-expand-label">Explore Scope</span>
+                  </div>
+                </div>
+
+                <div class="service-card-visual">
+                  <Image
+                    src={svc.image}
+                    alt={svc.imageAlt}
+                    class="service-cutout-photo"
+                    width={svc.width}
+                    height={svc.height}
+                    loading="lazy"
+                  />
+                </div>
+              </article>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Turnkey Execution Cycle (BAU CARGO style interactive capability pills) -->
+    <ExecutionLifecycle />
+  </div>
+</section>

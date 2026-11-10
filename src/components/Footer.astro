@@ -1,0 +1,67 @@
+---
+import { Image } from 'astro:assets';
+import logoHybrid from '../assets/logo-hybrid.png';
+---
+
+<footer class="site-footer" data-theme="light">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand-col">
+        <a href="#top" class="footer-logo-link" aria-label="HYBRID Electro Mechanical L.L.C Home">
+          <Image
+            src={logoHybrid}
+            alt="HYBRID Electro Mechanical L.L.C"
+            class="footer-logo"
+            width={160}
+            height={38}
+            loading="lazy"
+          />
+        </a>
+        <p class="footer-tagline">Engineering Excellence. Delivering Reliability across the UAE.</p>
+      </div>
+
+      <nav class="footer-col" aria-labelledby="footer-explore-title">
+        <h2 id="footer-explore-title" class="footer-col-title">Explore</h2>
+        <ul class="footer-list">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#stats">Track Record</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h2 class="footer-col-title">Services</h2>
+        <ul class="footer-list">
+          <li><a href="#services">Electrical Services</a></li>
+          <li><a href="#services">Low Current Systems</a></li>
+          <li><a href="#services">Plumbing Services</a></li>
+          <li><a href="#services">HVAC Services</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h2 class="footer-col-title">Contact</h2>
+        <ul class="footer-list footer-contact-list">
+          <li><a href="tel:+97142564036">+971 4 256 4036</a></li>
+          <li><a href="mailto:info@hybridelectrouae.com">info@hybridelectrouae.com</a></li>
+          <li><a href="https://www.hybridelectrouae.com" target="_blank" rel="noopener noreferrer">www.hybridelectrouae.com</a></li>
+          <li class="footer-address">P.O.Box : 8937, Dubai - UAE</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 HYBRID Electro Mechanical L.L.C. All rights reserved.</p>
+      <a href="#top" class="back-to-top-link">
+        <span>Back to top</span>
+        <span class="back-to-top-btn" aria-hidden="true">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 13V3M4 7l4-4 4 4"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</footer>

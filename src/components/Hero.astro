@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+import heroPlant from '../assets/hero-plant-cutout.png';
+---
+
+<section class="hero-section pattern-surface" data-theme="light">
+  <div class="hero-inner">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <h1 class="hero-headline">
+          <span class="hero-headline-line">Engineering Excellence.</span>
+          <span class="hero-headline-line">Delivering Reliability.</span>
+        </h1>
+        <p class="hero-subheadline">
+          Specialized electromechanical contracting across the UAE—executing turnkey electrical, low-current, plumbing, and HVAC systems from engineering submittals to final commissioning.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn-pill btn-pill-brand">
+            <span>Explore Projects</span>
+            <span class="btn-icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 12L12 4M6 4h6v6"/>
+              </svg>
+            </span>
+          </a>
+          <a href="#services" class="btn-pill btn-pill-outline">
+            <span>All Services</span>
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 12L12 4M6 4h6v6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual-stage">
+        <Image
+          src={heroPlant}
+          alt="Three-tier modular industrial MEP plant topped with a blue HYBRID safety hard hat and technicians operating across levels"
+          class="hero-cutout-img"
+          width={939}
+          height={1600}
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,16 +1,19 @@
+import { projectsData } from '../data/projects';
+
 (() => {
   'use strict';
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // 0. Scroll Theme Engine (White ⇄ HYBRID Blue)
-  const themedSections = document.querySelectorAll('[data-theme]');
+  // 0. Scroll Theme Engine (Light <-> Blue)
+  const themedSections = document.querySelectorAll<HTMLElement>('[data-theme]');
   if (themedSections.length && 'IntersectionObserver' in window) {
     const themeObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            document.body.classList.toggle('theme-blue', entry.target.dataset.theme === 'blue');
+            const target = entry.target as HTMLElement;
+            document.body.classList.toggle('theme-blue', target.dataset.theme === 'blue');
           }
         });
       },
@@ -21,8 +24,8 @@
   }
 
   // 1. Mobile Navigation Drawer
-  const menuToggle = document.querySelector('.mobile-menu-toggle');
-  const mobileDrawer = document.getElementById('mobile-drawer');
+  const menuToggle = document.querySelector<HTMLButtonElement>('.mobile-menu-toggle');
+  const mobileDrawer = document.getElementById('mobile-drawer') as HTMLElement | null;
 
   if (menuToggle && mobileDrawer) {
     menuToggle.addEventListener('click', () => {
@@ -31,7 +34,7 @@
       mobileDrawer.hidden = expanded;
     });
 
-    mobileDrawer.querySelectorAll('a').forEach((link) => {
+    mobileDrawer.querySelectorAll<HTMLAnchorElement>('a').forEach((link) => {
       link.addEventListener('click', () => {
         menuToggle.setAttribute('aria-expanded', 'false');
         mobileDrawer.hidden = true;
@@ -50,20 +53,20 @@
   // 2. Services Carousel Autoscroll Controls & Interactive Cards
   const servicesViewport = document.getElementById('services-carousel');
   const servicesTrack = document.getElementById('services-carousel-track');
-  const servicesPauseBtn = document.getElementById('services-pause-btn');
+  const servicesPauseBtn = document.getElementById('services-pause-btn') as HTMLButtonElement | null;
 
   // For ultra-wide displays (>= 1800px), clone an extra track group so the seamless loop never runs out of cards
   if (servicesTrack && window.innerWidth >= 1800) {
     const firstGroup = servicesTrack.querySelector('.services-track-group');
     if (firstGroup) {
-      const extraClone = firstGroup.cloneNode(true);
+      const extraClone = firstGroup.cloneNode(true) as HTMLElement;
       extraClone.setAttribute('aria-hidden', 'true');
       extraClone.querySelectorAll('a, button, article').forEach((el) => el.setAttribute('tabindex', '-1'));
       servicesTrack.appendChild(extraClone);
     }
   }
 
-  const allServiceCards = document.querySelectorAll('.service-cutout-card');
+  const allServiceCards = document.querySelectorAll<HTMLElement>('.service-cutout-card');
 
   const syncCarouselPause = () => {
     if (!servicesViewport) return;
@@ -77,7 +80,8 @@
 
   allServiceCards.forEach((card) => {
     card.addEventListener('click', (e) => {
-      if (e.target.closest('a') || e.target.closest('button')) return;
+      const target = e.target as HTMLElement;
+      if (target.closest('a') || target.closest('button')) return;
       const wasExpanded = card.classList.contains('is-expanded');
       allServiceCards.forEach((c) => c.classList.remove('is-expanded'));
       if (!wasExpanded) {
@@ -88,7 +92,8 @@
 
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
-        if (e.target.closest('a')) return;
+        const target = e.target as HTMLElement;
+        if (target.closest('a')) return;
         e.preventDefault();
         const wasExpanded = card.classList.contains('is-expanded');
         allServiceCards.forEach((c) => c.classList.remove('is-expanded'));
@@ -102,9 +107,9 @@
 
   // Pause / Resume Button
   if (servicesPauseBtn && servicesViewport) {
-    const pauseIcon = servicesPauseBtn.querySelector('.pause-icon');
-    const playIcon = servicesPauseBtn.querySelector('.play-icon');
-    const btnText = servicesPauseBtn.querySelector('.pause-btn-text');
+    const pauseIcon = servicesPauseBtn.querySelector<HTMLElement>('.pause-icon');
+    const playIcon = servicesPauseBtn.querySelector<HTMLElement>('.play-icon');
+    const btnText = servicesPauseBtn.querySelector<HTMLElement>('.pause-btn-text');
 
     servicesPauseBtn.addEventListener('click', () => {
       const isCurrentlyPressed = servicesPauseBtn.getAttribute('aria-pressed') === 'true';
@@ -147,8 +152,8 @@
   }
 
   // 3. Turnkey MEP Execution Lifecycle Filter Pills
-  const cycleTabs = document.querySelectorAll('.cycle-tab');
-  const cycleCards = document.querySelectorAll('.cycle-step-card');
+  const cycleTabs = document.querySelectorAll<HTMLButtonElement>('.cycle-tab');
+  const cycleCards = document.querySelectorAll<HTMLElement>('.cycle-step-card');
 
   cycleTabs.forEach((tab) => {
     tab.addEventListener('click', () => {
@@ -175,18 +180,18 @@
     });
   });
 
-  // 3. Stats Numerical Counter Animation
-  const counters = document.querySelectorAll('.js-counter');
+  // 4. Stats Numerical Counter Animation
+  const counters = document.querySelectorAll<HTMLElement>('.js-counter');
   let countersAnimated = false;
 
   const animateCounters = () => {
-    if (countersAnimated || prefersReducedMotion || navigator.webdriver) return;
+    if (countersAnimated || prefersReducedMotion || (navigator as unknown as { webdriver?: boolean }).webdriver) return;
     countersAnimated = true;
 
     const duration = 900;
     const startTime = performance.now();
 
-    const step = (now) => {
+    const step = (now: number) => {
       const elapsed = Math.min((now - startTime) / duration, 1);
       const eased = 1 - Math.pow(1 - elapsed, 4);
 
@@ -220,14 +225,14 @@
     observer.observe(statsSection);
   }
 
-  // 4. Projects Carousel Controls
+  // 5. Projects Carousel Controls
   const projectsTrack = document.getElementById('projects-track');
   const prevBtn = document.getElementById('proj-prev');
   const nextBtn = document.getElementById('proj-next');
 
   if (projectsTrack && prevBtn && nextBtn) {
     const getScrollStep = () => {
-      const firstCard = projectsTrack.querySelector('.project-card');
+      const firstCard = projectsTrack.querySelector<HTMLElement>('.project-card');
       return firstCard ? firstCard.getBoundingClientRect().width + 24 : 360;
     };
 
@@ -246,82 +251,7 @@
     });
   }
 
-  // 5. Project Details Modal Popup
-  const projectData = {
-    residential: {
-      title: 'Residential Development Project',
-      sector: 'Residential',
-      status: 'UAE Sector Scope',
-      summary: 'Turnkey electromechanical contracting for modern residential communities and high-end villas. Encompasses DEWA-compliant power distribution, smart living connectivity, and premium water distribution networks.',
-      specs: [
-        { label: 'Electrical & ELV', desc: 'MDB, SMDB & DB panels, interior architectural LED lighting, perimeter lighting, structured Cat6A data points, and smart home automation.' },
-        { label: 'HVAC & Mechanical', desc: 'High-efficiency chilled water FCUs, duct insulated networks, fresh air handling, and smart digital thermostats.' },
-        { label: 'Plumbing & Drainage', desc: 'Hot & cold PPR water distribution lines, centralized water heating, booster pump manifolds, and sanitary fittings fit-out.' },
-        { label: 'Authority Handover', desc: 'Complete civil defence, DEWA, and municipality approvals with certified as-built documentation.' }
-      ]
-    },
-    corporate: {
-      title: 'Corporate Commercial Tower',
-      sector: 'Corporate',
-      status: 'UAE Sector Scope',
-      summary: 'Full-scope MEP design, supply, installation, and commissioning for multi-story corporate headquarters and grade-A commercial office developments.',
-      specs: [
-        { label: 'Electrical & ELV', desc: 'LV switchgear assembly, busbar risers, essential UPS circuits, biometric access control, and enterprise CCTV monitoring.' },
-        { label: 'HVAC & Mechanical', desc: 'Central chilled water plant connection, precision server room cooling, variable air volume (VAV) systems, and air balancing.' },
-        { label: 'Plumbing & Sanitation', desc: 'High-rise water booster stations, storm drainage risers, dedicated washroom batteries, and water metering systems.' },
-        { label: 'Authority Handover', desc: 'Consultant coordination, technical material approvals, third-party testing, and turnkey authority inspection.' }
-      ]
-    },
-    retail: {
-      title: 'Retail & Showroom Complex',
-      sector: 'Retail',
-      status: 'UAE Sector Scope',
-      summary: 'Fast-track electromechanical installation tailored for luxury retail flagships, multi-brand showrooms, and shopping mall fit-outs in Dubai and the wider UAE.',
-      specs: [
-        { label: 'Electrical & ELV', desc: 'High-CRI accent lighting track systems, sub-metering boards, public address (PA) audio, and theft-prevention EAS cabling.' },
-        { label: 'HVAC & Mechanical', desc: 'Mall chilled water tie-ins, rooftop package unit ducting, custom linear slot diffusers, and smoke extraction.' },
-        { label: 'Plumbing & Safety', desc: 'Staff pantry water services, drainage connections, grease interceptor tie-ins, and fire hose reel/sprinkler coordination.' },
-        { label: 'Authority Handover', desc: 'Mall facility management liaison, out-of-hours testing, load balance submittals, and fast-track permit closures.' }
-      ]
-    },
-    hospitality: {
-      title: 'Hospitality & Luxury Suites',
-      sector: 'Hospitality',
-      status: 'UAE Sector Scope',
-      summary: 'Acoustically isolated, high-comfort MEP contracting designed for luxury hotel suites, resorts, and premium serviced residences.',
-      specs: [
-        { label: 'Electrical & ELV', desc: 'Guest Room Management System (GRMS), bespoke mood lighting controls, high-speed Wi-Fi access points, and IPTV network lines.' },
-        { label: 'HVAC & Mechanical', desc: 'Ultra-low acoustic NC-25 chilled water FCUs, insulated sound attenuators, continuous bathroom extract, and fresh air supply.' },
-        { label: 'Plumbing & Drainage', desc: 'Instantaneous hot water circulation loops, pressure-balanced thermostatic mixers, luxury concealed cisterns, and acoustic drainage pipes.' },
-        { label: 'Authority Handover', desc: 'Comprehensive thermal performance commissioning, sound level verification, and turnkey hotel operator sign-off.' }
-      ]
-    },
-    healthcare: {
-      title: 'Healthcare & Clinic Facility',
-      sector: 'Healthcare',
-      status: 'UAE Sector Scope',
-      summary: 'Stringent clinical-grade electromechanical installations compliant with UAE health authority and international hospital safety standards.',
-      specs: [
-        { label: 'Electrical & ELV', desc: 'Isolated power supplies (IPS), medical-grade grounding, uninterruptible power systems (UPS), and nurse call stations.' },
-        { label: 'HVAC & Mechanical', desc: 'HEPA filtration air handling units, positive/negative pressure isolation rooms, laminar flow systems, and medical gas duct coordination.' },
-        { label: 'Plumbing & Drainage', desc: 'Medical washbasin touchless fittings, chemical-resistant drainage piping, and pure water purification distribution.' },
-        { label: 'Authority Handover', desc: 'DHA / MOH health regulations compliance, air particulate validation, and sterilisation testing certification.' }
-      ]
-    },
-    education: {
-      title: 'Educational Campus Facility',
-      sector: 'Education',
-      status: 'UAE Sector Scope',
-      summary: 'High-durability, energy-efficient MEP infrastructure engineered for educational campuses, laboratories, sports complexes, and auditoriums.',
-      specs: [
-        { label: 'Electrical & ELV', desc: 'Outdoor feeder pillars, classroom presentation AV cabling, synchronized campus PA/emergency broadcast, and secure campus perimeter CCTV.' },
-        { label: 'HVAC & Mechanical', desc: 'High-volume central chiller plant distribution, lab exhaust fume extraction, and energy-recovery ventilation (ERV).' },
-        { label: 'Plumbing & Sanitation', desc: 'Heavy-traffic student washroom plumbing batteries, safety eyewash stations, centralized water storage reservoirs, and pump stations.' },
-        { label: 'Authority Handover', desc: 'Ministry of Education compliance, utility sub-station energisation, and comprehensive preventive maintenance schedule.' }
-      ]
-    }
-  };
-
+  // 6. Project Details Modal Popup
   const projectModal = document.getElementById('project-modal');
   const modalCloseBtn = document.getElementById('modal-close-btn');
   const modalTitle = document.getElementById('modal-project-title');
@@ -330,21 +260,23 @@
   const modalStatusBadge = document.getElementById('modal-status-badge');
   const modalSpecsList = document.getElementById('modal-specs-list');
 
-  const openProjectModal = (projectId) => {
-    const data = projectData[projectId];
+  const openProjectModal = (projectId: string) => {
+    const data = projectsData[projectId];
     if (!data || !projectModal) return;
 
-    modalTitle.textContent = data.title;
-    modalSummary.textContent = data.summary;
-    modalSectorBadge.textContent = data.sector;
-    modalStatusBadge.textContent = data.status;
+    if (modalTitle) modalTitle.textContent = data.title;
+    if (modalSummary) modalSummary.textContent = data.summary;
+    if (modalSectorBadge) modalSectorBadge.textContent = data.sector;
+    if (modalStatusBadge) modalStatusBadge.textContent = data.status;
 
-    modalSpecsList.innerHTML = data.specs.map((item) => `
-      <div class="modal-spec-item">
-        <dt>${item.label}</dt>
-        <dd>${item.desc}</dd>
-      </div>
-    `).join('');
+    if (modalSpecsList) {
+      modalSpecsList.innerHTML = data.specs.map((item) => `
+        <div class="modal-spec-item">
+          <dt>${item.label}</dt>
+          <dd>${item.desc}</dd>
+        </div>
+      `).join('');
+    }
 
     projectModal.classList.add('is-open');
     projectModal.setAttribute('aria-hidden', 'false');
@@ -359,7 +291,7 @@
     document.body.style.overflow = '';
   };
 
-  document.querySelectorAll('.project-card').forEach((card) => {
+  document.querySelectorAll<HTMLElement>('.project-card').forEach((card) => {
     card.addEventListener('click', () => {
       const pId = card.getAttribute('data-project-id');
       if (pId) openProjectModal(pId);
@@ -386,20 +318,20 @@
     }
   });
 
-  // 6. Minimal Contact Form Validation & Submission State
-  const contactForm = document.getElementById('contact-form');
+  // 7. Contact Form Validation & Submission State
+  const contactForm = document.getElementById('contact-form') as HTMLFormElement | null;
   if (contactForm) {
-    const nameInput = document.getElementById('contact-name');
-    const emailInput = document.getElementById('contact-email');
-    const messageInput = document.getElementById('contact-message');
-    const errorName = document.getElementById('error-name');
-    const errorEmail = document.getElementById('error-email');
-    const errorMessage = document.getElementById('error-message');
-    const submitBtn = document.getElementById('contact-submit');
-    const submitText = submitBtn ? submitBtn.querySelector('.submit-text') : null;
-    const formStatus = document.getElementById('form-status');
+    const nameInput = document.getElementById('contact-name') as HTMLInputElement | null;
+    const emailInput = document.getElementById('contact-email') as HTMLInputElement | null;
+    const messageInput = document.getElementById('contact-message') as HTMLTextAreaElement | null;
+    const errorName = document.getElementById('error-name') as HTMLElement | null;
+    const errorEmail = document.getElementById('error-email') as HTMLElement | null;
+    const errorMessage = document.getElementById('error-message') as HTMLElement | null;
+    const submitBtn = document.getElementById('contact-submit') as HTMLButtonElement | null;
+    const submitText = submitBtn ? submitBtn.querySelector<HTMLElement>('.submit-text') : null;
+    const formStatus = document.getElementById('form-status') as HTMLElement | null;
 
-    const setFieldError = (input, errorEl, hasError) => {
+    const setFieldError = (input: HTMLElement | null, errorEl: HTMLElement | null, hasError: boolean) => {
       if (!input || !errorEl) return;
       input.setAttribute('aria-invalid', String(hasError));
       errorEl.hidden = !hasError;
@@ -411,7 +343,7 @@
       [messageInput, errorMessage]
     ].forEach(([input, errorEl]) => {
       if (input) {
-        input.addEventListener('input', () => setFieldError(input, errorEl, false));
+        input.addEventListener('input', () => setFieldError(input as HTMLElement, errorEl as HTMLElement, false));
       }
     });
 

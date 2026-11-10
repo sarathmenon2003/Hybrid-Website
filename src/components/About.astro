@@ -1,0 +1,103 @@
+---
+import { Image } from 'astro:assets';
+import aboutEngineers from '../assets/about-engineers-table.png';
+---
+
+<section id="about" class="about-section" data-theme="light">
+  <div class="container">
+    <div class="about-banner pattern-indigo">
+      <div class="about-banner-heading">
+        <h2>Trusted MEP Contracting Partner Across the UAE</h2>
+      </div>
+      <div class="about-banner-body">
+        <p>
+          Established in 2022 in Dubai, HYBRID specializes in the design, supply, installation, testing, and commissioning of mechanical, electrical, and plumbing networks for residential, retail, and commercial landmarks. Supported by qualified engineers and dedicated field teams, we manage every technical submittal, authority approval, and site handover within agreed timelines.
+        </p>
+      </div>
+      <div class="about-banner-action">
+        <a href="#contact" class="btn-pill btn-pill-ghost-light">
+          <span>Work With Us</span>
+          <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 12L12 4M6 4h6v6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="about-detail-grid">
+      <div class="about-photo-frame">
+        <Image
+          src={aboutEngineers}
+          alt="HYBRID engineering team in branded safety vests and blue hard hats collaborating around MEP blueprints"
+          class="about-team-img"
+          width={1200}
+          height={1200}
+          loading="lazy"
+        />
+      </div>
+
+      <div class="about-pillars-panel">
+        <h3>Built on Precision, Compliance, and Long-Term Partnerships</h3>
+        <p class="about-pillars-lead">
+          Our in-house engineering capabilities cover shop drawings, coordination drawings, material submittals, authority approvals, and as-built documentation in full compliance with international codes.
+        </p>
+
+        <div class="values-grid">
+          <div class="value-item">
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Excellence &amp; Quality</h4>
+              <p>Superior workmanship and strict adherence to consultant specifications on every site.</p>
+            </div>
+          </div>
+
+          <div class="value-item">
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12l2 2 4-4"/>
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Health &amp; Safety First</h4>
+              <p>Clean, organized working environments backed by regular workforce safety training.</p>
+            </div>
+          </div>
+
+          <div class="value-item">
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7" rx="1"/>
+                <rect x="14" y="3" width="7" height="7" rx="1"/>
+                <rect x="14" y="14" width="7" height="7" rx="1"/>
+                <rect x="3" y="14" width="7" height="7" rx="1"/>
+              </svg>
+            </div>
+            <div>
+              <h4>End-to-End Execution</h4>
+              <p>Streamlined procurement, in-house design, and commissioning under one roof.</p>
+            </div>
+          </div>
+
+          <div class="value-item">
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Trusted Relationships</h4>
+              <p>Collaborative execution alongside developers, consultants, and joint-venture partners.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

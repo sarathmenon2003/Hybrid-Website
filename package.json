@@ -1,0 +1,20 @@
+{
+  "name": "hybrid-website",
+  "version": "1.0.0",
+  "description": "HYBRID Electro Mechanical L.L.C corporate website",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarathmenon2003/Hybrid-Website.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "astro": "^5.0.0"
+  }
+}

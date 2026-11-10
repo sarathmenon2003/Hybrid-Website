@@ -1,0 +1,105 @@
+---
+import { projectsData } from '../data/projects';
+
+const projects = Object.values(projectsData);
+---
+
+<section id="projects" class="projects-section pattern-surface" data-theme="blue">
+  <div class="container">
+    <div class="section-header-row">
+      <h2>Selected Project Sectors &amp; Scopes</h2>
+      <div class="carousel-controls" aria-label="Projects Gallery Controls">
+        <button type="button" class="carousel-btn" id="proj-prev" aria-label="Previous projects">
+          <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 12L6 8l4-4"/>
+          </svg>
+        </button>
+        <button type="button" class="carousel-btn" id="proj-next" aria-label="Next projects">
+          <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 12l4-4-4-4"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="projects-track-wrapper">
+      <div class="projects-track" id="projects-track" tabindex="0" aria-label="Projects showcase carousel">
+        {projects.map((proj) => (
+          <article class="project-card" tabindex="0" data-project-id={proj.id}>
+            <div class="project-card-image-wrap">
+              <div class={`project-card-placeholder-bg sector-${proj.id}`} aria-hidden="true">
+                <div class="project-card-badge-top">
+                  <span class="project-sector-badge">{proj.sector}</span>
+                  <span class="project-status-pill">{proj.status}</span>
+                </div>
+                <div class="project-placeholder-art">
+                  {proj.id === 'residential' && (
+                    <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 38V18L24 6l18 12v20H30V26H18v12H6z"/>
+                    </svg>
+                  )}
+                  {proj.id === 'corporate' && (
+                    <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="8" y="6" width="32" height="36" rx="2"/>
+                      <path d="M16 14h4M28 14h4M16 22h4M28 22h4M16 30h4M28 30h4M20 42v-6h8v6"/>
+                    </svg>
+                  )}
+                  {proj.id === 'retail' && (
+                    <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 14h36l-3 24H9L6 14z"/>
+                      <path d="M18 14V10a6 6 0 0 1 12 0v4"/>
+                    </svg>
+                  )}
+                  {proj.id === 'hospitality' && (
+                    <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 38V12a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v26M30 20h10a2 2 0 0 1 2 2v16"/>
+                      <path d="M14 18h4M22 18h4M14 26h4M22 26h4M14 34h4M22 34h4"/>
+                    </svg>
+                  )}
+                  {proj.id === 'healthcare' && (
+                    <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="8" y="8" width="32" height="32" rx="4"/>
+                      <path d="M24 16v16M16 24h16"/>
+                    </svg>
+                  )}
+                  {proj.id === 'education' && (
+                    <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M24 8L4 18l20 10 20-10L24 8z"/>
+                      <path d="M10 21v14c0 4 6 7 14 7s14-3 14-7V21"/>
+                      <path d="M40 20v14"/>
+                    </svg>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card-body">
+              <div class="project-card-text">
+                <h3>{proj.title}</h3>
+                <p>
+                  {proj.id === 'residential' && 'Turnkey MEP engineering, high-durability distribution networks, and smart home automation.'}
+                  {proj.id === 'corporate' && 'Turnkey commercial fit-out, submittals, and multi-zone climate control.'}
+                  {proj.id === 'retail' && 'Fast-track mall authority approvals, architectural lighting, and package AC units.'}
+                  {proj.id === 'hospitality' && 'Low-noise chilled water systems, smart room controls, and luxury plumbing fixtures.'}
+                  {proj.id === 'healthcare' && 'Hygienic ventilation, essential LV standby power, and medical-grade drainage lines.'}
+                  {proj.id === 'education' && 'Campus structured cabling, central cooling plants, and high-capacity water networks.'}
+                </p>
+              </div>
+
+              <div class="project-card-action">
+                <span class="project-view-btn">
+                  <span>View Project</span>
+                  <span class="btn-icon-circle-sm" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 12L12 4M6 4h6v6"/>
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

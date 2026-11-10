@@ -200,7 +200,7 @@ textarea {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("assets/pattern.png");
+  background-image: url("/pattern.png");
   background-size: 520px auto;
   background-repeat: repeat;
   opacity: 0.032;
@@ -218,7 +218,7 @@ textarea {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("assets/pattern.png");
+  background-image: url("/pattern.png");
   background-size: 460px auto;
   background-repeat: repeat;
   filter: invert(1);

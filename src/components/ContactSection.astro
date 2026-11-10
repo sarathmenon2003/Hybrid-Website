@@ -1,0 +1,122 @@
+---
+import { Image } from 'astro:assets';
+import handshakeCutout from '../assets/contact-handshake-cutout.png';
+---
+
+<section id="contact" class="contact-section" data-theme="light">
+  <div class="container">
+    <!-- BAU CARGO bottom conversion banner with handshake cutout -->
+    <div class="contact-cta-banner pattern-indigo">
+      <div class="contact-cta-copy">
+        <h2>Start Your Next MEP Project With HYBRID</h2>
+        <p>Share your project scope or tender requirements—our engineering team responds promptly with technical consultations and competitive proposals.</p>
+      </div>
+
+      <div class="contact-cta-action">
+        <a href="tel:+97142564036" class="btn-pill btn-pill-light">
+          <span>Call +971 4 256 4036</span>
+          <span class="btn-icon-circle-dark" aria-hidden="true">
+            <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 12L12 4M6 4h6v6"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="contact-cta-cutout">
+        <Image
+          src={handshakeCutout}
+          alt="Two executives shaking hands across a consultation table"
+          class="handshake-cutout-img"
+          width={1000}
+          height={763}
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <!-- Minimal Contact Form & Direct Dubai Contact Details -->
+    <div class="contact-main-grid">
+      <div class="contact-info-panel">
+        <h3>Direct Contact &amp; Dubai Office</h3>
+        <p class="contact-info-lead">
+          Reach our estimating and engineering team directly by phone, email, or visit our Dubai office.
+        </p>
+
+        <dl class="contact-details-list">
+          <div class="contact-detail-row">
+            <dt>Address</dt>
+            <dd>P.O.Box : 8937, Dubai - UAE</dd>
+          </div>
+          <div class="contact-detail-row">
+            <dt>Telephone</dt>
+            <dd><a href="tel:+97142564036">+971 4 256 4036</a></dd>
+          </div>
+          <div class="contact-detail-row">
+            <dt>Email</dt>
+            <dd><a href="mailto:info@hybridelectrouae.com">info@hybridelectrouae.com</a></dd>
+          </div>
+          <div class="contact-detail-row">
+            <dt>Website</dt>
+            <dd><a href="https://www.hybridelectrouae.com" target="_blank" rel="noopener noreferrer">www.hybridelectrouae.com</a></dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="contact-form-panel">
+        <h3>Send an Inquiry</h3>
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-field">
+            <label for="contact-name">Name</label>
+            <input
+              type="text"
+              id="contact-name"
+              name="name"
+              autocomplete="name"
+              placeholder="Your full name or company"
+              required
+            />
+            <span class="field-error" id="error-name" role="alert" hidden>Please enter your name.</span>
+          </div>
+
+          <div class="form-field">
+            <label for="contact-email">Email</label>
+            <input
+              type="email"
+              id="contact-email"
+              name="email"
+              autocomplete="email"
+              placeholder="name@company.ae"
+              required
+            />
+            <span class="field-error" id="error-email" role="alert" hidden>Please enter a valid email address.</span>
+          </div>
+
+          <div class="form-field">
+            <label for="contact-message">Message</label>
+            <textarea
+              id="contact-message"
+              name="message"
+              rows="4"
+              placeholder="Briefly describe your project location, sector, and MEP scope..."
+              required
+            ></textarea>
+            <span class="field-error" id="error-message" role="alert" hidden>Please include a short message about your project.</span>
+          </div>
+
+          <div class="form-submit-row">
+            <button type="submit" class="btn-pill btn-pill-dark" id="contact-submit">
+              <span class="submit-text">Send Inquiry</span>
+              <span class="btn-icon-circle" aria-hidden="true">
+                <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 12L12 4M6 4h6v6"/>
+                </svg>
+              </span>
+            </button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

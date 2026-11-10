@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import ServicesCarousel from '../components/ServicesCarousel.astro';
+import StatsSection from '../components/StatsSection.astro';
+import ProjectsTrack from '../components/ProjectsTrack.astro';
+import ContactSection from '../components/ContactSection.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import Footer from '../components/Footer.astro';
+import ProjectModal from '../components/ProjectModal.astro';
+---
+
+<BaseLayout>
+  <!-- Top Navigation -->
+  <Header />
+
+  <!-- Main Content Flow -->
+  <main>
+    <!-- 1. Hero Section -->
+    <Hero />
+
+    <!-- 2. About Us Section -->
+    <About />
+
+    <!-- 3. Services & Execution Lifecycle -->
+    <ServicesCarousel />
+
+    <!-- 4. Stats Section (Number Counters) -->
+    <StatsSection />
+
+    <!-- 5. Projects Showcase Section -->
+    <ProjectsTrack />
+
+    <!-- 6. Contact Us Section -->
+    <ContactSection />
+  </main>
+
+  <!-- Floating WhatsApp Integration -->
+  <WhatsAppButton />
+
+  <!-- Site Footer -->
+  <Footer />
+
+  <!-- Project Details Modal Popup -->
+  <ProjectModal />
+</BaseLayout>
