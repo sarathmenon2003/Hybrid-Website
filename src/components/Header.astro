@@ -16,12 +16,13 @@ import logoHybrid from '../assets/logo-hybrid.png';
       />
     </a>
 
-    <nav class="main-nav" aria-label="Primary Navigation">
-      <a href="#about" class="nav-link">About Us</a>
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#stats" class="nav-link">Track Record</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#contact" class="nav-link">Contact</a>
+    <nav class="main-nav" id="main-nav" aria-label="Primary Navigation">
+      <span class="nav-hover-pill" id="nav-hover-pill" aria-hidden="true"></span>
+      <a href="#about" class="nav-link" data-nav="about">About Us</a>
+      <a href="#services" class="nav-link" data-nav="services">Services</a>
+      <a href="#stats" class="nav-link" data-nav="stats">Track Record</a>
+      <a href="#projects" class="nav-link" data-nav="projects">Projects</a>
+      <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
     </nav>
 
     <div class="header-actions">
@@ -34,9 +35,11 @@ import logoHybrid from '../assets/logo-hybrid.png';
         </span>
       </a>
       <button type="button" class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Toggle navigation menu">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <path d="M4 7h16M4 12h16M4 17h16"/>
-        </svg>
+        <span class="hamburger-box" aria-hidden="true">
+          <span class="hamburger-line line-1"></span>
+          <span class="hamburger-line line-2"></span>
+          <span class="hamburger-line line-3"></span>
+        </span>
       </button>
     </div>
   </div>

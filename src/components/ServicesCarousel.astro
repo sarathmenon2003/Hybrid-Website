@@ -78,34 +78,13 @@ const services = [
 ];
 ---
 
-<section id="services" class="services-section pattern-surface" data-theme="blue">
+<section id="services" class="services-section pattern-surface" data-theme="light">
   <div class="container">
-    <div class="section-header-row">
-      <div>
+    <div class="section-header-row reveal-fade-up">
+      <div class="services-header-text">
         <h2>Our Services</h2>
       </div>
       <div class="services-header-actions">
-        <button
-          type="button"
-          class="carousel-pause-btn"
-          id="services-pause-btn"
-          aria-label="Pause autoscrolling services carousel"
-          aria-pressed="false"
-          title="Pause / Resume autoscroll"
-        >
-          <span class="pause-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
-              <rect x="6" y="4" width="4" height="16" rx="1"/>
-              <rect x="14" y="4" width="4" height="16" rx="1"/>
-            </svg>
-          </span>
-          <span class="play-icon" aria-hidden="true" style="display: none;">
-            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
-              <polygon points="6 4 18 12 6 20 6 4"/>
-            </svg>
-          </span>
-          <span class="pause-btn-text">Pause</span>
-        </button>
         <a href="#contact" class="inline-arrow-link">
           <span>Request Technical Submittal</span>
           <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -115,95 +94,76 @@ const services = [
       </div>
     </div>
 
-    <div class="services-carousel-viewport" id="services-carousel" aria-label="Our services carousel">
-      <div class="services-carousel-track" id="services-carousel-track">
-        {/* Track Group 1 (Primary) and Track Group 2 (Infinite Loop Clone) */}
-        {[1, 2].map((groupIndex) => (
-          <div
-            class="services-track-group"
-            aria-hidden={groupIndex === 2 ? "true" : undefined}
-          >
-            {services.map((svc) => (
-              <article
-                class="service-cutout-card"
-                tabindex={groupIndex === 2 ? "-1" : "0"}
-              >
-                <div class="service-card-top">
-                  <div class="service-card-body">
-                    <div class="service-title-row">
-                      <span class="service-icon-box" aria-hidden="true">
-                        {svc.icon === 'electrical' && (
-                          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                          </svg>
-                        )}
-                        {svc.icon === 'low-current' && (
-                          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
-                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
-                            <line x1="6" y1="6" x2="6.01" y2="6"/>
-                            <line x1="6" y1="18" x2="6.01" y2="18"/>
-                          </svg>
-                        )}
-                        {svc.icon === 'plumbing' && (
-                          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2v6m0 0l-3 3m3-3l3 3M6 14a6 6 0 0 0 12 0c0-4-6-10-6-10s-6 6-6 10z"/>
-                          </svg>
-                        )}
-                        {svc.icon === 'hvac' && (
-                          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/>
-                          </svg>
-                        )}
-                      </span>
-                      <h3>{svc.title}</h3>
-                    </div>
-                    <p class="service-summary">{svc.summary}</p>
+    <!-- 2x2 Signature Architectural Bento Grid -->
+    <div class="services-bento-grid reveal-stagger">
+      {services.map((svc) => (
+        <article class="service-bento-card spotlight-card" id={`svc-${svc.id}`}>
+          <div class="service-bento-content">
+            <div>
+              <div class="service-bento-title-row">
+                <span class="service-icon-box" aria-hidden="true">
+                  {svc.icon === 'electrical' && (
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                    </svg>
+                  )}
+                  {svc.icon === 'low-current' && (
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                      <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                      <line x1="6" y1="6" x2="6.01" y2="6"/>
+                      <line x1="6" y1="18" x2="6.01" y2="18"/>
+                    </svg>
+                  )}
+                  {svc.icon === 'plumbing' && (
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2v6m0 0l-3 3m3-3l3 3M6 14a6 6 0 0 0 12 0c0-4-6-10-6-10s-6 6-6 10z"/>
+                    </svg>
+                  )}
+                  {svc.icon === 'hvac' && (
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/>
+                    </svg>
+                  )}
+                </span>
+                <h3>{svc.title}</h3>
+              </div>
 
-                    <div class="service-expand-drawer">
-                      <div class="service-expand-inner">
-                        <p class="service-deep-copy">{svc.deepCopy}</p>
-                        <ul class="service-scope-list">
-                          {svc.scope.map((item) => (
-                            <li>
-                              <strong>{item.title}</strong> {item.desc}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+              <p class="service-bento-summary">{svc.summary}</p>
 
-                  <div class="service-card-footer">
-                    <a
-                      href="#contact"
-                      class="card-corner-btn"
-                      aria-label={`Inquire about ${svc.title}`}
-                      tabindex={groupIndex === 2 ? "-1" : undefined}
-                    >
-                      <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 12L12 4M6 4h6v6"/>
-                      </svg>
-                    </a>
-                    <span class="service-expand-label">Explore Scope</span>
-                  </div>
-                </div>
+              <ul class="service-bento-scope-list">
+                {svc.scope.map((item) => (
+                  <li>
+                    <strong>{item.title}</strong> {item.desc}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-                <div class="service-card-visual">
-                  <Image
-                    src={svc.image}
-                    alt={svc.imageAlt}
-                    class="service-cutout-photo"
-                    width={svc.width}
-                    height={svc.height}
-                    loading="lazy"
-                  />
-                </div>
-              </article>
-            ))}
+            <div class="service-bento-footer">
+              <a href="#contact" class="btn-pill-sm-link" aria-label={`Inquire about ${svc.title}`}>
+                <span>Inquire Division</span>
+                <span class="btn-icon-circle-sm" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 12L12 4M6 4h6v6"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
           </div>
-        ))}
-      </div>
+
+          <div class="service-bento-visual">
+            <Image
+              src={svc.image}
+              alt={svc.imageAlt}
+              class="service-bento-photo"
+              width={svc.width}
+              height={svc.height}
+              loading="lazy"
+            />
+          </div>
+        </article>
+      ))}
     </div>
 
     <!-- Turnkey Execution Cycle (BAU CARGO style interactive capability pills) -->

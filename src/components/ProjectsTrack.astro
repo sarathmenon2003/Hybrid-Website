@@ -1,12 +1,30 @@
 ---
+import { Image } from 'astro:assets';
 import { projectsData } from '../data/projects';
+import type { ImageMetadata } from 'astro';
+
+import imgResidential from '../assets/projects/project-residential.jpg';
+import imgCorporate from '../assets/projects/project-corporate.jpg';
+import imgRetail from '../assets/projects/project-retail.jpg';
+import imgHospitality from '../assets/projects/project-hospitality.jpg';
+import imgHealthcare from '../assets/projects/project-healthcare.jpg';
+import imgEducation from '../assets/projects/project-education.jpg';
+
+const projectImages: Record<string, ImageMetadata> = {
+  residential: imgResidential,
+  corporate: imgCorporate,
+  retail: imgRetail,
+  hospitality: imgHospitality,
+  healthcare: imgHealthcare,
+  education: imgEducation
+};
 
 const projects = Object.values(projectsData);
 ---
 
-<section id="projects" class="projects-section pattern-surface" data-theme="blue">
+<section id="projects" class="projects-section pattern-surface" data-theme="light">
   <div class="container">
-    <div class="section-header-row">
+    <div class="section-header-row reveal-fade-up">
       <h2>Selected Project Sectors &amp; Scopes</h2>
       <div class="carousel-controls" aria-label="Projects Gallery Controls">
         <button type="button" class="carousel-btn" id="proj-prev" aria-label="Previous projects">
@@ -23,53 +41,20 @@ const projects = Object.values(projectsData);
     </div>
 
     <div class="projects-track-wrapper">
-      <div class="projects-track" id="projects-track" tabindex="0" aria-label="Projects showcase carousel">
+      <div class="projects-track reveal-stagger" id="projects-track" tabindex="0" aria-label="Projects showcase carousel">
         {projects.map((proj) => (
-          <article class="project-card" tabindex="0" data-project-id={proj.id}>
+          <article class="project-card spotlight-card" tabindex="0" data-project-id={proj.id}>
             <div class="project-card-image-wrap">
-              <div class={`project-card-placeholder-bg sector-${proj.id}`} aria-hidden="true">
-                <div class="project-card-badge-top">
-                  <span class="project-sector-badge">{proj.sector}</span>
-                  <span class="project-status-pill">{proj.status}</span>
-                </div>
-                <div class="project-placeholder-art">
-                  {proj.id === 'residential' && (
-                    <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M6 38V18L24 6l18 12v20H30V26H18v12H6z"/>
-                    </svg>
-                  )}
-                  {proj.id === 'corporate' && (
-                    <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="8" y="6" width="32" height="36" rx="2"/>
-                      <path d="M16 14h4M28 14h4M16 22h4M28 22h4M16 30h4M28 30h4M20 42v-6h8v6"/>
-                    </svg>
-                  )}
-                  {proj.id === 'retail' && (
-                    <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M6 14h36l-3 24H9L6 14z"/>
-                      <path d="M18 14V10a6 6 0 0 1 12 0v4"/>
-                    </svg>
-                  )}
-                  {proj.id === 'hospitality' && (
-                    <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M6 38V12a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v26M30 20h10a2 2 0 0 1 2 2v16"/>
-                      <path d="M14 18h4M22 18h4M14 26h4M22 26h4M14 34h4M22 34h4"/>
-                    </svg>
-                  )}
-                  {proj.id === 'healthcare' && (
-                    <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="8" y="8" width="32" height="32" rx="4"/>
-                      <path d="M24 16v16M16 24h16"/>
-                    </svg>
-                  )}
-                  {proj.id === 'education' && (
-                    <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M24 8L4 18l20 10 20-10L24 8z"/>
-                      <path d="M10 21v14c0 4 6 7 14 7s14-3 14-7V21"/>
-                      <path d="M40 20v14"/>
-                    </svg>
-                  )}
-                </div>
+              <Image
+                src={projectImages[proj.id]}
+                alt={`${proj.title} - ${proj.sector}`}
+                class="project-card-photo"
+                width={800}
+                height={533}
+                loading="lazy"
+              />
+              <div class="project-card-badge-top">
+                <span class="project-sector-badge">{proj.sector}</span>
               </div>
             </div>
 

@@ -8,13 +8,13 @@ import heroPlant from '../assets/hero-plant-cutout.png';
     <div class="hero-grid">
       <div class="hero-content">
         <h1 class="hero-headline">
-          <span class="hero-headline-line">Engineering Excellence.</span>
-          <span class="hero-headline-line">Delivering Reliability.</span>
+          <span class="hero-headline-line hero-reveal-line" style="--line-delay: 0.08s;">Engineering Excellence.</span>
+          <span class="hero-headline-line hero-reveal-line" style="--line-delay: 0.22s;">Delivering Reliability.</span>
         </h1>
-        <p class="hero-subheadline">
+        <p class="hero-subheadline hero-reveal-item" style="--item-delay: 0.38s;">
           Specialized electromechanical contracting across the UAE—executing turnkey electrical, low-current, plumbing, and HVAC systems from engineering submittals to final commissioning.
         </p>
-        <div class="hero-cta-group">
+        <div class="hero-cta-group hero-reveal-item" style="--item-delay: 0.5s;">
           <a href="#projects" class="btn-pill btn-pill-brand">
             <span>Explore Projects</span>
             <span class="btn-icon-circle" aria-hidden="true">
@@ -32,7 +32,7 @@ import heroPlant from '../assets/hero-plant-cutout.png';
         </div>
       </div>
 
-      <div class="hero-visual-stage">
+      <div class="hero-visual-stage hero-reveal-stage">
         <Image
           src={heroPlant}
           alt="Three-tier modular industrial MEP plant topped with a blue HYBRID safety hard hat and technicians operating across levels"

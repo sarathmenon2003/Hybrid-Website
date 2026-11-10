@@ -7,16 +7,16 @@ const stats = [
 ];
 ---
 
-<section id="stats" class="stats-section pattern-surface" data-theme="blue">
+<section id="stats" class="stats-section" data-theme="dark">
   <div class="container">
-    <div class="stats-header">
+    <div class="stats-header reveal-fade-up">
       <h2>Proven Delivery Across the Emirates</h2>
       <p>Milestones verified across residential, commercial, retail, hospitality, healthcare, and education facilities.</p>
     </div>
 
-    <div class="stats-tiles-grid">
+    <div class="stats-tiles-grid reveal-stagger">
       {stats.map((stat) => (
-        <div class="stat-tile">
+        <div class="stat-tile spotlight-card spotlight-card-dark">
           <div class="stat-value">
             <span class="js-counter" data-target={stat.target}>{stat.target}</span><span class="stat-suffix">{stat.suffix}</span>
           </div>
