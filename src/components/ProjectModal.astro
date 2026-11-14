@@ -11,18 +11,16 @@
 
     <div class="project-modal-header">
       <div class="project-modal-badge-row">
-        <span class="project-sector-badge" id="modal-sector-badge">Sector</span>
-        <span class="project-status-pill" id="modal-status-badge">Turnkey Execution</span>
+        <span class="project-sector-badge" id="modal-sector-badge">Client</span>
       </div>
       <h3 id="modal-project-title" class="project-modal-title">Project Title</h3>
-      <p id="modal-project-summary" class="project-modal-summary">Project Summary Overview</p>
     </div>
 
-    <div class="project-modal-body">
-      <div class="modal-section-title">Detailed MEP Engineering Scope</div>
-      <dl class="modal-specs-list" id="modal-specs-list">
-        <!-- Dynamically populated by client script with project scope details -->
-      </dl>
+    <div class="project-modal-gallery" id="modal-gallery" hidden>
+      <div class="modal-gallery-main">
+        <img id="modal-gallery-active-img" src="" alt="" loading="lazy" />
+      </div>
+      <div class="modal-gallery-thumbs" id="modal-gallery-thumbs"></div>
     </div>
 
     <div class="project-modal-footer">

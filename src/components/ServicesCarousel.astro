@@ -11,13 +11,6 @@ const services = [
     id: 'electrical',
     title: 'Electrical Services',
     summary: 'Safe, code-compliant Low Voltage power distribution, switchgear assembly, and lighting infrastructure.',
-    deepCopy: 'Turnkey DEWA and authority-compliant electrical execution—from load schedules, voltage-drop calculations, and shop drawings to panel termination, live testing, and final commissioning.',
-    scope: [
-      { title: 'LV Switchgear (MDB / SMDB / DB):', desc: 'Installation, testing, commissioning & panel upgrading' },
-      { title: 'Power Distribution:', desc: 'Main feeder cabling, sub-main circuits & heavy machinery wiring' },
-      { title: 'Control & Automation Panels:', desc: 'Custom assembly, internal wiring & motor control centers' },
-      { title: 'Lighting & Feeder Pillars:', desc: 'Interior, architectural façade, emergency & outdoor enclosures' }
-    ],
     image: serviceElectrical,
     imageAlt: 'HYBRID technicians on ladders servicing low-voltage electrical distribution boards and control panels',
     width: 1200,
@@ -28,13 +21,6 @@ const services = [
     id: 'low-current',
     title: 'Low Current Systems',
     summary: 'Structured data cabling, enterprise security monitoring, and intelligent building automation networks.',
-    deepCopy: 'Integrated ELV and smart-building infrastructure engineered for high-availability commercial towers, hospitality venues, retail spaces, and modern residential developments.',
-    scope: [
-      { title: 'Data & Network Infrastructure:', desc: 'Structured Cat6A/Fiber cabling, LAN, Wi-Fi & server racks' },
-      { title: 'CCTV & Access Control:', desc: 'IP surveillance monitoring, biometric readers & gate barriers' },
-      { title: 'Telecom & Audio-Visual:', desc: 'Intercom, EPABX voice networks, PA systems & conference AV' },
-      { title: 'Smart Home Automation:', desc: 'Centralized control for lighting scenes, HVAC, shading & security' }
-    ],
     image: serviceLowCurrent,
     imageAlt: 'HYBRID engineer configuring low-current structured cabling, server racks, and data center patch panels',
     width: 1200,
@@ -45,13 +31,6 @@ const services = [
     id: 'plumbing',
     title: 'Plumbing & Sanitary',
     summary: 'Water supply piping, sanitary drainage networks, booster pumping stations, and rainwater systems.',
-    deepCopy: 'Comprehensive public health engineering adhering to Dubai Municipality and civil authority regulations—guaranteeing hydraulic integrity, leak prevention, and pressure stability.',
-    scope: [
-      { title: 'Piping & Distribution:', desc: 'High-grade PPR, PEX, and copper hot & cold water networks' },
-      { title: 'Drainage & Sewerage:', desc: 'Heavy-duty UPVC soil, waste, and rainwater drainage installations' },
-      { title: 'Pumping Stations:', desc: 'Water booster sets, transfer pumps, sump pits & submersible units' },
-      { title: 'Sanitary Ware & Heaters:', desc: 'Commercial fixtures, centralized water heaters & solar tie-ins' }
-    ],
     image: servicePlumbing,
     imageAlt: 'HYBRID plumbing team installing and testing green polypropylene water distribution manifolds and pressure valves',
     width: 1200,
@@ -62,13 +41,6 @@ const services = [
     id: 'hvac',
     title: 'HVAC & Air Conditioning',
     summary: 'Central chiller systems, precision ventilation, insulated duct fabrication, and energy-efficient cooling.',
-    deepCopy: 'Engineered thermal comfort and indoor air quality solutions designed specifically for Middle East ambient operating conditions, focusing on energy conservation and acoustic isolation.',
-    scope: [
-      { title: 'Cooling Systems:', desc: 'Chilled water FCUs, AHUs, DX split units & rooftop packaged units' },
-      { title: 'Ductwork Fabrication:', desc: 'GI/PI ductwork manufacturing, acoustic insulation & acoustic louvers' },
-      { title: 'Ventilation & Extract:', desc: 'Car park exhaust, smoke management, kitchen extract & ecology units' },
-      { title: 'Testing & Balancing (TAB):', desc: 'Complete air flow balancing, water hydronics & pressure testing' }
-    ],
     image: serviceHvac,
     imageAlt: 'HYBRID HVAC technicians inspecting and servicing industrial rooftop air handling units and chiller coils',
     width: 1091,
@@ -130,14 +102,6 @@ const services = [
               </div>
 
               <p class="service-bento-summary">{svc.summary}</p>
-
-              <ul class="service-bento-scope-list">
-                {svc.scope.map((item) => (
-                  <li>
-                    <strong>{item.title}</strong> {item.desc}
-                  </li>
-                ))}
-              </ul>
             </div>
 
             <div class="service-bento-footer">

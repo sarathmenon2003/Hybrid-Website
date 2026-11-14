@@ -10,7 +10,7 @@ import { projectsData } from '../data/projects';
     document.documentElement.classList.add('reveal-ready');
 
     const revealElements = document.querySelectorAll<HTMLElement>(
-      '.reveal-fade-up, .reveal-stagger, .hero-reveal-line, .hero-reveal-item, .hero-reveal-stage'
+      '.reveal-fade-up, .reveal-stagger'
     );
 
     if (revealElements.length && 'IntersectionObserver' in window) {
@@ -27,13 +27,7 @@ import { projectsData } from '../data/projects';
       );
 
       revealElements.forEach((el) => {
-        // Immediate reveal for elements already inside the first viewport
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          requestAnimationFrame(() => el.classList.add('is-inview'));
-        } else {
-          revealObserver.observe(el);
-        }
+        revealObserver.observe(el);
       });
     }
   }
@@ -82,13 +76,18 @@ import { projectsData } from '../data/projects';
     { passive: true }
   );
 
-  // 3. Header Magnetic Nav Hover Pill Indicator
+  // 3. Header Magnetic Nav Hover Pill Indicator & Active Section Scroll-Spy
   const mainNav = document.getElementById('main-nav');
   const navHoverPill = document.getElementById('nav-hover-pill');
-  if (mainNav && navHoverPill && !prefersReducedMotion) {
+  const navTargetSections = Array.from(document.querySelectorAll<HTMLElement>('section[id]'));
+  let isClickScrolling = false;
+  let clickScrollTimer: number | undefined;
+
+  if (mainNav) {
     const navLinks = mainNav.querySelectorAll<HTMLAnchorElement>('.nav-link');
 
     const movePillToLink = (link: HTMLAnchorElement) => {
+      if (!navHoverPill || prefersReducedMotion) return;
       const linkLeft = link.offsetLeft;
       const linkWidth = link.offsetWidth;
       navHoverPill.style.transform = `translate3d(${linkLeft}px, 0, 0)`;
@@ -97,6 +96,7 @@ import { projectsData } from '../data/projects';
     };
 
     const resetPill = () => {
+      if (!navHoverPill || prefersReducedMotion) return;
       const currentLink = mainNav.querySelector<HTMLAnchorElement>('.nav-link.is-current');
       if (currentLink) {
         movePillToLink(currentLink);
@@ -105,7 +105,105 @@ import { projectsData } from '../data/projects';
       }
     };
 
+    const setActiveNav = (activeId: string) => {
+      let activeLink: HTMLAnchorElement | null = null;
+      navLinks.forEach((link) => {
+        const matches = link.getAttribute('data-nav') === activeId;
+        link.classList.toggle('is-current', matches);
+        if (matches) activeLink = link;
+      });
+
+      document.querySelectorAll<HTMLAnchorElement>('.mobile-nav-link').forEach((link) => {
+        const href = link.getAttribute('href');
+        link.classList.toggle('is-current', href === `#${activeId}`);
+      });
+
+      // Keep hover pill position in sync if user isn't hovering
+      if (!mainNav.matches(':hover') && !prefersReducedMotion) {
+        if (activeLink) {
+          movePillToLink(activeLink);
+        } else if (navHoverPill) {
+          navHoverPill.style.opacity = '0';
+        }
+      }
+
+      // When scrolling UP back into a section, give its heading a subtle settling breath
+      if (!prefersReducedMotion && document.documentElement.getAttribute('data-scroll-dir') === 'up') {
+        const activeSection = document.getElementById(activeId);
+        const heading = activeSection?.querySelector<HTMLElement>('h2, h3');
+        if (heading && !heading.classList.contains('text-scroll-up-active')) {
+          heading.classList.add('text-scroll-up-active');
+          window.setTimeout(() => heading.classList.remove('text-scroll-up-active'), 650);
+        }
+      }
+    };
+
+    const calculateActiveSection = () => {
+      if (isClickScrolling || !navTargetSections.length) return;
+
+      const scrollY = window.scrollY;
+      const headerOffset = 90;
+
+      // Bottom of page check -> highlight last section (contact)
+      if (window.innerHeight + scrollY >= document.documentElement.scrollHeight - 60) {
+        setActiveNav('contact');
+        return;
+      }
+
+      // Find section currently in view based on scroll position
+      let currentSectionId = navTargetSections[0].id;
+      for (let i = 0; i < navTargetSections.length; i++) {
+        const section = navTargetSections[i];
+        const sectionTop = section.offsetTop - headerOffset;
+        if (scrollY >= sectionTop - 25) {
+          currentSectionId = section.id;
+        } else {
+          break;
+        }
+      }
+
+      setActiveNav(currentSectionId);
+    };
+
+    // Nav Links: Instant highlight, pill tracking, and smooth scroll with header offset
     navLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('data-nav');
+        if (!targetId) return;
+
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          e.preventDefault();
+
+          // Immediately set current section and position pill
+          isClickScrolling = true;
+          setActiveNav(targetId);
+          movePillToLink(link);
+
+          const headerHeight = 78;
+          const targetTop = targetSection.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+          window.scrollTo({
+            top: targetTop,
+            behavior: prefersReducedMotion ? 'auto' : 'smooth'
+          });
+
+          if (history.pushState) {
+            history.pushState(null, '', `#${targetId}`);
+          } else {
+            window.location.hash = targetId;
+          }
+
+          // Lock state during smooth scrolling
+          window.clearTimeout(clickScrollTimer);
+          clickScrollTimer = window.setTimeout(() => {
+            isClickScrolling = false;
+            setActiveNav(targetId);
+            resetPill();
+          }, 850);
+        }
+      });
+
       link.addEventListener('mouseenter', () => movePillToLink(link));
       link.addEventListener('focus', () => movePillToLink(link));
     });
@@ -117,49 +215,25 @@ import { projectsData } from '../data/projects';
       }
     });
 
-    window.addEventListener('resize', resetPill, { passive: true });
-  }
+    window.addEventListener('scroll', calculateActiveSection, { passive: true });
+    window.addEventListener('resize', () => {
+      resetPill();
+      calculateActiveSection();
+    }, { passive: true });
 
-  // 4. Active Section Nav Highlight & Scroll-Up Heading Reaction
-  const navTargetSections = document.querySelectorAll<HTMLElement>('section[id]');
-  if (navTargetSections.length && mainNav && 'IntersectionObserver' in window) {
-    const navObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const sectionId = entry.target.id;
-            mainNav.querySelectorAll<HTMLAnchorElement>('.nav-link').forEach((link) => {
-              const matches = link.getAttribute('data-nav') === sectionId;
-              link.classList.toggle('is-current', matches);
-            });
-            // Keep hover pill position in sync if user isn't hovering
-            if (navHoverPill && !mainNav.matches(':hover') && !prefersReducedMotion) {
-              const activeLink = mainNav.querySelector<HTMLAnchorElement>('.nav-link.is-current');
-              if (activeLink) {
-                navHoverPill.style.transform = `translate3d(${activeLink.offsetLeft}px, 0, 0)`;
-                navHoverPill.style.width = `${activeLink.offsetWidth}px`;
-                navHoverPill.style.opacity = '1';
-              }
-            }
-
-            // When scrolling UP back into a section, give its heading a subtle settling breath
-            if (
-              !prefersReducedMotion &&
-              document.documentElement.getAttribute('data-scroll-dir') === 'up'
-            ) {
-              const heading = entry.target.querySelector<HTMLElement>('h2, h3');
-              if (heading && !heading.classList.contains('text-scroll-up-active')) {
-                heading.classList.add('text-scroll-up-active');
-                window.setTimeout(() => heading.classList.remove('text-scroll-up-active'), 650);
-              }
-            }
-          }
-        });
-      },
-      { rootMargin: '-30% 0px -60% 0px', threshold: 0 }
-    );
-
-    navTargetSections.forEach((section) => navObserver.observe(section));
+    // Initial state on page load
+    if (window.location.hash) {
+      const hashId = window.location.hash.replace('#', '');
+      if (document.getElementById(hashId)) {
+        setActiveNav(hashId);
+        const activeLink = mainNav.querySelector<HTMLAnchorElement>(`.nav-link[data-nav="${hashId}"]`);
+        if (activeLink) movePillToLink(activeLink);
+      } else {
+        calculateActiveSection();
+      }
+    } else {
+      calculateActiveSection();
+    }
   }
 
   // 5. Spotlight Cursor Effect on Architectural Bento Cards
@@ -235,8 +309,37 @@ import { projectsData } from '../data/projects';
     });
 
     mobileDrawer.querySelectorAll<HTMLAnchorElement>('a').forEach((link) => {
-      link.addEventListener('click', () => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
         closeMenu();
+        if (href && href.startsWith('#')) {
+          const targetId = href.slice(1);
+          const targetSection = document.getElementById(targetId);
+          if (targetSection) {
+            e.preventDefault();
+            isClickScrolling = true;
+            if (mainNav) {
+              const navLinks = mainNav.querySelectorAll<HTMLAnchorElement>('.nav-link');
+              navLinks.forEach((l) => l.classList.toggle('is-current', l.getAttribute('data-nav') === targetId));
+            }
+            document.querySelectorAll<HTMLAnchorElement>('.mobile-nav-link').forEach((l) => {
+              l.classList.toggle('is-current', l.getAttribute('href') === href);
+            });
+            const headerHeight = 78;
+            const targetTop = targetSection.getBoundingClientRect().top + window.scrollY - headerHeight;
+            window.scrollTo({
+              top: targetTop,
+              behavior: prefersReducedMotion ? 'auto' : 'smooth'
+            });
+            if (history.pushState) {
+              history.pushState(null, '', `#${targetId}`);
+            }
+            window.clearTimeout(clickScrollTimer);
+            clickScrollTimer = window.setTimeout(() => {
+              isClickScrolling = false;
+            }, 850);
+          }
+        }
       });
     });
 
@@ -323,29 +426,119 @@ import { projectsData } from '../data/projects';
     statsObserver.observe(statsSection);
   }
 
-  // 10. Projects Carousel Controls
+  // 10. Projects Infinite Auto-Scrolling Carousel & Controls
   const projectsTrack = document.getElementById('projects-track');
   const prevBtn = document.getElementById('proj-prev');
   const nextBtn = document.getElementById('proj-next');
 
   if (projectsTrack && prevBtn && nextBtn) {
-    const getScrollStep = () => {
-      const firstCard = projectsTrack.querySelector<HTMLElement>('.project-card');
-      return firstCard ? firstCard.getBoundingClientRect().width + 24 : 360;
+    let scrollPos = 0;
+    let isPaused = false;
+    let isManualScrolling = false;
+    let manualScrollTimer: number | undefined;
+    const autoScrollSpeed = 0.7;
+
+    const getHalfWidth = () => {
+      const cards = projectsTrack.querySelectorAll<HTMLElement>('.project-card');
+      const halfCount = Math.floor(cards.length / 2);
+      if (halfCount > 0 && cards[halfCount]) {
+        return cards[halfCount].offsetLeft - cards[0].offsetLeft;
+      }
+      return projectsTrack.scrollWidth / 2;
     };
 
+    const getScrollStep = () => {
+      const cards = projectsTrack.querySelectorAll<HTMLElement>('.project-card');
+      if (cards.length > 1) {
+        return cards[1].offsetLeft - cards[0].offsetLeft;
+      }
+      return cards[0] ? cards[0].getBoundingClientRect().width + 24 : 360;
+    };
+
+    const stepInfiniteCarousel = () => {
+      const modalOpen = document.getElementById('project-modal')?.classList.contains('is-open');
+      if (!prefersReducedMotion && !isPaused && !isManualScrolling && !modalOpen) {
+        const halfWidth = getHalfWidth();
+        if (halfWidth > 0) {
+          scrollPos += autoScrollSpeed;
+          if (scrollPos >= halfWidth) {
+            scrollPos -= halfWidth;
+          }
+          projectsTrack.scrollLeft = scrollPos;
+        }
+      }
+      requestAnimationFrame(stepInfiniteCarousel);
+    };
+
+    requestAnimationFrame(stepInfiniteCarousel);
+
+    const pauseCarousel = () => {
+      isPaused = true;
+    };
+
+    const resumeCarousel = () => {
+      const halfWidth = getHalfWidth();
+      if (halfWidth > 0) {
+        scrollPos = projectsTrack.scrollLeft % halfWidth;
+        projectsTrack.scrollLeft = scrollPos;
+      }
+      isPaused = false;
+    };
+
+    projectsTrack.addEventListener('mouseenter', pauseCarousel);
+    projectsTrack.addEventListener('mouseleave', resumeCarousel);
+    projectsTrack.addEventListener('focusin', pauseCarousel);
+    projectsTrack.addEventListener('focusout', resumeCarousel);
+    projectsTrack.addEventListener('touchstart', pauseCarousel, { passive: true });
+    projectsTrack.addEventListener('touchend', () => {
+      window.setTimeout(resumeCarousel, 600);
+    }, { passive: true });
+
+    prevBtn.addEventListener('mouseenter', pauseCarousel);
+    prevBtn.addEventListener('mouseleave', resumeCarousel);
+    nextBtn.addEventListener('mouseenter', pauseCarousel);
+    nextBtn.addEventListener('mouseleave', resumeCarousel);
+
     prevBtn.addEventListener('click', () => {
+      const halfWidth = getHalfWidth();
+      const step = getScrollStep();
+      if (halfWidth > 0 && projectsTrack.scrollLeft < step) {
+        projectsTrack.scrollLeft += halfWidth;
+      }
+      isManualScrolling = true;
       projectsTrack.scrollBy({
-        left: -getScrollStep(),
+        left: -step,
         behavior: prefersReducedMotion ? 'auto' : 'smooth'
       });
+      window.clearTimeout(manualScrollTimer);
+      manualScrollTimer = window.setTimeout(() => {
+        if (halfWidth > 0) {
+          scrollPos = ((projectsTrack.scrollLeft % halfWidth) + halfWidth) % halfWidth;
+          projectsTrack.scrollLeft = scrollPos;
+        }
+        isManualScrolling = false;
+      }, 550);
     });
 
     nextBtn.addEventListener('click', () => {
+      const halfWidth = getHalfWidth();
+      const step = getScrollStep();
+      if (halfWidth > 0 && projectsTrack.scrollLeft >= halfWidth) {
+        projectsTrack.scrollLeft -= halfWidth;
+      }
+      isManualScrolling = true;
       projectsTrack.scrollBy({
-        left: getScrollStep(),
+        left: step,
         behavior: prefersReducedMotion ? 'auto' : 'smooth'
       });
+      window.clearTimeout(manualScrollTimer);
+      manualScrollTimer = window.setTimeout(() => {
+        if (halfWidth > 0) {
+          scrollPos = projectsTrack.scrollLeft % halfWidth;
+          projectsTrack.scrollLeft = scrollPos;
+        }
+        isManualScrolling = false;
+      }, 550);
     });
   }
 
@@ -353,31 +546,50 @@ import { projectsData } from '../data/projects';
   const projectModal = document.getElementById('project-modal');
   const modalCloseBtn = document.getElementById('modal-close-btn');
   const modalTitle = document.getElementById('modal-project-title');
-  const modalSummary = document.getElementById('modal-project-summary');
   const modalSectorBadge = document.getElementById('modal-sector-badge');
-  const modalStatusBadge = document.getElementById('modal-status-badge');
-  const modalSpecsList = document.getElementById('modal-specs-list');
+  const modalGallery = document.getElementById('modal-gallery');
+  const modalGalleryActiveImg = document.getElementById('modal-gallery-active-img') as HTMLImageElement | null;
+  const modalGalleryThumbs = document.getElementById('modal-gallery-thumbs');
 
   const openProjectModal = (projectId: string) => {
     const data = projectsData[projectId];
     if (!data || !projectModal) return;
 
     if (modalTitle) modalTitle.textContent = data.title;
-    if (modalSummary) modalSummary.textContent = data.summary;
-    if (modalSectorBadge) modalSectorBadge.textContent = data.sector;
-    if (modalStatusBadge) modalStatusBadge.textContent = data.status;
+    if (modalSectorBadge) modalSectorBadge.textContent = `Client: ${data.client}`;
 
-    if (modalSpecsList) {
-      modalSpecsList.innerHTML = data.specs
-        .map(
-          (item) => `
-        <div class="modal-spec-item">
-          <dt>${item.label}</dt>
-          <dd>${item.desc}</dd>
-        </div>
-      `
-        )
-        .join('');
+    if (modalGallery && modalGalleryActiveImg && modalGalleryThumbs) {
+      if (data.images && data.images.length > 0) {
+        modalGallery.hidden = false;
+        modalGalleryActiveImg.src = data.images[0];
+        modalGalleryActiveImg.alt = `${data.title} - Photo 1`;
+
+        modalGalleryThumbs.innerHTML = data.images
+          .map(
+            (imgSrc, idx) => `
+          <button type="button" class="modal-thumb-btn ${idx === 0 ? 'is-active' : ''}" data-img-src="${imgSrc}" data-img-idx="${idx + 1}" aria-label="View photo ${idx + 1} of ${data.title}">
+            <img src="${imgSrc}" alt="${data.title} thumbnail ${idx + 1}" loading="lazy" />
+          </button>
+        `
+          )
+          .join('');
+
+        modalGalleryThumbs.querySelectorAll<HTMLButtonElement>('.modal-thumb-btn').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const src = btn.getAttribute('data-img-src');
+            const idx = btn.getAttribute('data-img-idx');
+            if (src && modalGalleryActiveImg) {
+              modalGalleryActiveImg.src = src;
+              modalGalleryActiveImg.alt = `${data.title} - Photo ${idx}`;
+              modalGalleryThumbs.querySelectorAll('.modal-thumb-btn').forEach((b) => b.classList.remove('is-active'));
+              btn.classList.add('is-active');
+            }
+          });
+        });
+      } else {
+        modalGallery.hidden = true;
+        modalGalleryThumbs.innerHTML = '';
+      }
     }
 
     projectModal.classList.add('is-open');
