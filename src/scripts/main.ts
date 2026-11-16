@@ -687,14 +687,28 @@ import { projectsData } from '../data/projects';
         submitText.textContent = 'Sending...';
       }
 
+      const recipient = 'rajan@hybridelectrouae.com';
+      const subject = encodeURIComponent(`MEP Project Inquiry from ${nameVal} - HYBRID`);
+      const body = encodeURIComponent(
+        `Dear HYBRID Team,
+
+Name: ${nameVal}
+Email: ${emailVal}
+
+Project Scope & Inquiry:
+${msgVal}
+`
+      );
+
       window.setTimeout(() => {
         if (submitBtn && submitText) {
           submitBtn.disabled = false;
           submitText.textContent = 'Send Inquiry';
         }
+        window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
         contactForm.reset();
         if (formStatus) {
-          formStatus.textContent = 'Thank you. Your inquiry has been prepared for info@hybridelectrouae.com.';
+          formStatus.textContent = 'Thank you! Your inquiry has been directed to rajan@hybridelectrouae.com.';
         }
       }, 450);
     });

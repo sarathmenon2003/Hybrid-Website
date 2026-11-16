@@ -46,7 +46,7 @@ Established in 2022 in Dubai, UAE, HYBRID combines in-house engineering and tech
   - Email: `info@hybridelectrouae.com`
   - Landline: `+97142564036`
   - Address: `P.O.Box : 8937, Dubai - UAE`
-  - WhatsApp Number & Specific Named Project Titles/Scopes: Pending user input in chat.
+  - WhatsApp: +971 50 216 7710 (Direct link: https://wa.me/971502167710)
 
 ## Brand Commitments
 
